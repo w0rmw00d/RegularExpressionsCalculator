@@ -11,7 +11,7 @@
     <div>
         <nav class="navbar navbar-dark navbar-inverse navbar-fixed-top">
             <div class="navbar-header">
-                <span id="logo" class="pull-left" style="margin-left: 8px; margin-right: 4px;"><img src="~/Content/logo-thicker.png" /></span>
+                <a id="logo" class="pull-left" onclick="toggleSideNav()" style="margin-left: 8px; margin-right: 4px;"><img src="~/Content/logo-thicker.png" /></a>
                 <a class="navbar-brand">RegCalc</a>
             </div>
             <ul class="nav navbar-nav">
@@ -52,20 +52,20 @@
         </nav>
     </div>
     <div>
-        <nav class="navbar navbar-inverse navbar-left side-nav pull-left">
+        <nav class="navbar navbar-inverse navbar-left side-nav pull-left" id="side-nav">
             @if (ViewBag.Title == "Calculator")
             {
                 <div class="navbar-header"><a tabindex="" id="symbol-toggle" class="navbar-brand">Regex Symbols</a></div>
                 <ul class="nav">
-                    <li><a tabindex="" role="button" onclick='openOverlay("Anchor")'>Anchors &gt;</a></li>
-                    <li><a tabindex="" role="button" onclick='openOverlay("Assert")'>Assertions &gt;</a></li>
-                    <li><a tabindex="" role="button" onclick='openOverlay("Character")'>Character Classes &gt;</a></li>
-                    <li><a tabindex="" role="button" onclick='openOverlay("Escape")'>Escape Characters &gt;</a></li>
-                    <li><a tabindex="" role="button" onclick='openOverlay("Group")'>Groups and Ranges &gt;</a></li>
-                    <li><a tabindex="" role="button" onclick='openOverlay("Quant")'>Quantifiers &gt;</a></li>
-                    <li><a tabindex="" role="button" onclick='openOverlay("Mod")'>Pattern Modifiers &gt;</a></li>
-                    <li><a tabindex="" role="button" onclick='openOverlay("Special")'>Special Characters &gt;</a></li>
-                    <li><a tabindex="" role="button" onclick='openOverlay("Replace")'>String Replacement &gt;</a></li>
+                    <li><a tabindex="" role="button" onclick='openOverlay("Anchor")'>Anchors</a></li>
+                    <li><a tabindex="" role="button" onclick='openOverlay("Assert")'>Assertions</a></li>
+                    <li><a tabindex="" role="button" onclick='openOverlay("Character")'>Character Classes</a></li>
+                    <li><a tabindex="" role="button" onclick='openOverlay("Escape")'>Escape Characters</a></li>
+                    <li><a tabindex="" role="button" onclick='openOverlay("Group")'>Groups and Ranges</a></li>
+                    <li><a tabindex="" role="button" onclick='openOverlay("Quant")'>Quantifiers</a></li>
+                    <li><a tabindex="" role="button" onclick='openOverlay("Mod")'>Pattern Modifiers</a></li>
+                    <li><a tabindex="" role="button" onclick='openOverlay("Special")'>Special Characters</a></li>
+                    <li><a tabindex="" role="button" onclick='openOverlay("Replace")'>String Replacement</a></li>
                 </ul>
             }
             else if (ViewBag.Title == "Regular Engine")
@@ -91,15 +91,21 @@
         @Scripts.Render("~/bundles/modernizr")
         @Scripts.Render("~/bundles/jquery")
         @Scripts.Render("~/bundles/bootstrap")
-        @Scripts.Render("~/bundles/layout")
-        @Scripts.Render("~/bundles/calculator")
         @RenderSection("scripts", required: false)
     </div>
+
     <script>
-        // toggles popovers
-        $().ready(function () {
-            $('[data-toggle="popover"]').popover();
-        });
+        function toggleSideNav() {
+            var nav = document.getElementById("side-nav");
+            if (nav.hidden) {
+                nav.hidden = false;
+                document.getElementById("body").className = "body-content";
+            }
+            else {
+                nav.hidden = true;
+                document.getElementById("body").className = "body-content-minimized";
+            }
+        }
     </script>
 </body>
 </html>

@@ -2,25 +2,28 @@
     background-color: #101010;
 }
 
-/* Set padding to keep content from hitting the edges */
 .body-content {
     margin: 0;
-    padding: 5% 0 5% 20%;
+    padding: 5% 0 5% 22%;
+}
+
+/* Set content behavior if side nav is minimized */
+.body-content-minimized {
+    margin: 0;
+    padding: 5% 0 5% 5%;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
-*/
+   will truncate terms that are too long to fit in the left column */
 .dl-horizontal {
     white-space: normal;
     margin:0;
 }
 
 dt, dd {
-    margin:10px;
+    margin:10px 0 0 0;
 }
 
-/* Set width on the form input elements since they're 100% wide by default */
 input,
 select,
 textarea {
@@ -32,7 +35,20 @@ textarea {
     max-width: 350px;
 }
 
+/* rounding corners on textareas to match input element appearance */
 textarea {
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    border-radius:5px;
+}
+
+/* to allow highlighting and other text tricks */
+.text-div {
+    max-width: 350px;
+    max-height: 500px;
+    overflow-wrap:break-word;
+    overflow:auto;
+    background-color: white;
     -webkit-border-radius:5px;
     -moz-border-radius:5px;
     border-radius:5px;
@@ -212,6 +228,11 @@ label {
     border-bottom-right-radius: 5px;
 }
 
+/* used for highlighted text */
+.text-highlight {
+    background-color: grey;
+}
+
 /* media adjustment for overlay */
 @media screen and (max-height: 450px) {
     .overlay a {font-size: 10pt}
@@ -220,10 +241,6 @@ label {
         top: 15px;
         right: 30px;
     }
-}
-
-/* media adjustment for page */
-@media screen and (max-height: 450px) {
     a {font-size:10pt}
-    .side-nav {width:0px}
+    .side-nav {width: 0; height: 0;}
 }

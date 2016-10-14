@@ -10,7 +10,13 @@ namespace RegularExpressionsCalculator.Controllers
     {
         public ActionResult Calculator()
         {
-            ViewBag.SampleText = GetText(); 
+            var split = GetText().Split('\n');
+            var formatted = string.Empty;
+            foreach (var item in split)
+            {
+                formatted = string.Concat(formatted, item, "<br/>");
+            }
+            ViewBag.SampleText = formatted;
             return View();
         }
 

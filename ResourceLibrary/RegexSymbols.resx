@@ -1,0 +1,357 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AtLeastQuantifier" xml:space="preserve">
+    <value>These symbols represent a minimum number of matches that the pattern in front of it should try to match. Any matches above the minimum are also counted.  It can also be greedy or lazy, depending on the quantifiers following it.</value>
+  </data>
+  <data name="BoundaryAnchor" xml:space="preserve">
+    <value>This pattern signals an empty string that isn't at the beginning or end of a word.</value>
+  </data>
+  <data name="BracketRange" xml:space="preserve">
+    <value>These symbols represent a range between the characters inside the brackets which includes all characters in sequence between and including the two characters at each end of the range.</value>
+  </data>
+  <data name="CaretAnchor" xml:space="preserve">
+    <value>The caret signals the start of string or multiline pattern.</value>
+  </data>
+  <data name="ControlChar" xml:space="preserve">
+    <value>This pattern represents the control button, and can be paired with other characters to signal the effect of pressing both the control button and the button represented by the character following it.</value>
+  </data>
+  <data name="DigitChar" xml:space="preserve">
+    <value>This pattern represents any digit 0-9, as well as digit characters from Unicode, which may include digits from other languages.  </value>
+  </data>
+  <data name="DollarAnchor" xml:space="preserve">
+    <value>The dollar sign signals the end of a string or a line in a multiline pattern.</value>
+  </data>
+  <data name="ExactQuantifier" xml:space="preserve">
+    <value>These symbols represent an exact limiter on how many matches should be found. It can also be greedy or lazy, depending on the quantifiers following it.</value>
+  </data>
+  <data name="FeedChar" xml:space="preserve">
+    <value>This pattern represents the form feed, or page break character.</value>
+  </data>
+  <data name="GreedyOneQuantifier" xml:space="preserve">
+    <value>This symbol represents a match of one or more times, and follows the character or pattern it is meant to find. It is called greedy because it will continue matching through the whole sequence instead of stopping after it finds a match. </value>
+  </data>
+  <data name="GreedyZeroQuantifier" xml:space="preserve">
+    <value>This symbol represents a match of zero or more times, and follows the character or pattern it is meant to find. It is called greedy because it will continue matching through the whole sequence instead of stopping after it finds a match. This may result in it finding only one match when there are actually many matches because it waits until the end of the sequence to declare a match.</value>
+  </data>
+  <data name="GroupRange" xml:space="preserve">
+    <value>These symbols represent a grouping, or a collection that has to be considered together for the purposes of matching a pattern.</value>
+  </data>
+  <data name="HexaChar" xml:space="preserve">
+    <value>This pattern represents any grouping of digits that represent a hexadecimal value.</value>
+  </data>
+  <data name="HexStrChar" xml:space="preserve">
+    <value>This pattern represents a grouping of hexadecimal characters.</value>
+  </data>
+  <data name="LazyQuantifier" xml:space="preserve">
+    <value>This symbol represents a match of only zero or one times, and can be used in tandem with other qualifiers, in addition to on its own, to force matching to stop after the first match is found. It follows either the character or pattern it is meant to match or the quantifier it is meant to restrict.</value>
+  </data>
+  <data name="LiteralEscape" xml:space="preserve">
+    <value>This character represents the request to treat the following character as a literal character, instead of as a part of a special character.</value>
+  </data>
+  <data name="NewLineChar" xml:space="preserve">
+    <value>This pattern represents the command to start a new line.</value>
+  </data>
+  <data name="NonBracketRange" xml:space="preserve">
+    <value>These symbols represent a range between the characters inside the bracket, up to and including both ends of the range, which are excluded from matching.</value>
+  </data>
+  <data name="NonDigitChar" xml:space="preserve">
+    <value>This pattern represents any non-digit character.</value>
+  </data>
+  <data name="NonOrBracketRange" xml:space="preserve">
+    <value>These symbols represent a range between the characters inside the brackets which are excluded from pattern matching.</value>
+  </data>
+  <data name="NonWordChar" xml:space="preserve">
+    <value>This pattern represents any non-word characters.</value>
+  </data>
+  <data name="NotSpaceChar" xml:space="preserve">
+    <value>This pattern represents white space that is not the spacebar, tab, return, or the form feed.</value>
+  </data>
+  <data name="OctalChar" xml:space="preserve">
+    <value>This pattern represents any grouping of digits that represent an octal value.</value>
+  </data>
+  <data name="OctalStrChar" xml:space="preserve">
+    <value>This pattern represents a grouping of octal characters.</value>
+  </data>
+  <data name="OrBracketRange" xml:space="preserve">
+    <value>These symbols represent a range between the characters inside the brackets such that any of the character or all of them may be matched (exclusive or).</value>
+  </data>
+  <data name="OrRange" xml:space="preserve">
+    <value>These symbols represent an or statement, in which at least one of the alternatives have to be true for the pattern to match.</value>
+  </data>
+  <data name="PassiveGroupRange" xml:space="preserve">
+    <value>These symbols represent a grouping which the regex engine doesn't have to remember--it can be used to match and discarded.</value>
+  </data>
+  <data name="PeriodRange" xml:space="preserve">
+    <value>This character represents a match of any character except the new line character (\n).</value>
+  </data>
+  <data name="RangeQuantifier" xml:space="preserve">
+    <value>These symbols represent a range of number of matches that the pattern should try to find. It is inclusive, allowing anything including the minimum and up to and including the maximum number of matches.  It can also be greedy or lazy, depending on the quantifiers following it.</value>
+  </data>
+  <data name="ReturnChar" xml:space="preserve">
+    <value>This pattern represents the use of the return button.</value>
+  </data>
+  <data name="SequenceEndEscape" xml:space="preserve">
+    <value>These symbols represent the end of the request to treat the previous sequence as literal, ignoring any special characters contained within it.</value>
+  </data>
+  <data name="SequenceStartEscape" xml:space="preserve">
+    <value>These symbols represent the request to treat the following sequence as literal, ignoring any special characters in it.</value>
+  </data>
+  <data name="SpaceChar" xml:space="preserve">
+    <value>This pattern represents white space created by the spacebar or the use of the tab.</value>
+  </data>
+  <data name="StringBeginAnchor" xml:space="preserve">
+    <value>This pattern signals the start of a string.</value>
+  </data>
+  <data name="StringEndAnchor" xml:space="preserve">
+    <value>This pattern signals the end of a string.</value>
+  </data>
+  <data name="TabChar" xml:space="preserve">
+    <value>This pattern represents the use of the tab button.</value>
+  </data>
+  <data name="VertTabChar" xml:space="preserve">
+    <value>This pattern represents the use of a vertical tab.</value>
+  </data>
+  <data name="WordBoundaryAnchor" xml:space="preserve">
+    <value>This pattern signals a word boundary.</value>
+  </data>
+  <data name="WordChar" xml:space="preserve">
+    <value>This pattern represents a word, defined as any grouping of one or more characters designated word characters, separated by any spacing character. Examples may include hyphens, brackets, and digits.</value>
+  </data>
+  <data name="WordEndAnchor" xml:space="preserve">
+    <value>This pattern signals the end of a word.</value>
+  </data>
+  <data name="WordStartAnchor" xml:space="preserve">
+    <value>This pattern signals the start of a word.</value>
+  </data>
+  <data name="AfterReplacement" xml:space="preserve">
+    <value>This pattern allows the ability to insert a given sequence after the matched pattern.</value>
+  </data>
+  <data name="AllowCommentSpacePattern" xml:space="preserve">
+    <value>This pattern allows comments and/or the inclusion of white space in patterns. This is a PCRE modifier.</value>
+  </data>
+  <data name="BeforeReplacement" xml:space="preserve">
+    <value>This pattern allows the ability to insert a given sequence before the matched pattern.</value>
+  </data>
+  <data name="BeginLiteralEscape" xml:space="preserve">
+    <value>This pattern is used to signal the beginning of a sequence that should be interpreted literally, not as a part of a pattern or special instructions to the regular expressions engine.</value>
+  </data>
+  <data name="CaseInsensitivePattern" xml:space="preserve">
+    <value>This pattern allows a search for matches that ignore upper or lower case. This is a PCRE modifier.</value>
+  </data>
+  <data name="Comment" xml:space="preserve">
+    <value>This pattern signals that the following sequence is a comment, and should be ignored by the regular expressions engine</value>
+  </data>
+  <data name="CommonMetaChar" xml:space="preserve">
+    <value>All of the following characters are commonly used to signal the start or end of instructions to the regular expressions engine, or to signal that the characters between them should not be interpreted literally.</value>
+  </data>
+  <data name="EndLiteralEscape" xml:space="preserve">
+    <value>This pattern is used to signal the end of a sequence that should be interpreted literally, not as a part of a pattern or special instructions to the regular expressions engine.</value>
+  </data>
+  <data name="EntireReplacement" xml:space="preserve">
+    <value>This pattern allows the ability to insert a given pattern and replace the entire match or matches.</value>
+  </data>
+  <data name="EscapeCharacter" xml:space="preserve">
+    <value>This character is commonly used to signal that the following character/s are to be interpreted differently, usually literally or otherwise not as a part of a pattern or instructions to the regular expressions engine.</value>
+  </data>
+  <data name="EvaluatePattern" xml:space="preserve">
+    <value>This pattern allows the evaulation of a replacement during pattern matching. This is a PCRE modifier.</value>
+  </data>
+  <data name="FirstReplacement" xml:space="preserve">
+    <value>This pattern allows the ability to replace a given sequence with another in a pattern that has repeating elements.</value>
+  </data>
+  <data name="GlobalPattern" xml:space="preserve">
+    <value>This pattern allows a search of all the items  in the given section for matching patterns.</value>
+  </data>
+  <data name="IfThenAssertion" xml:space="preserve">
+    <value>This pattern looks for a match conditionally, such that if the first condition is met, the second condition is searched for.</value>
+  </data>
+  <data name="IfThenElseAssertion" xml:space="preserve">
+    <value>This pattern looks for a match conditionally, such that if the first condition is met, the second will be attempted. If it is not able to be matched, the last condition will be attempted.</value>
+  </data>
+  <data name="LastReplacement" xml:space="preserve">
+    <value>This pattern allows the ability to insert a given pattern and replace the last match.</value>
+  </data>
+  <data name="LookaheadAssertion" xml:space="preserve">
+    <value>This pattern looks for a match and returns a true/false result for matching, leaving the engine at the beginning of the match.</value>
+  </data>
+  <data name="LookbehindAssertion" xml:space="preserve">
+    <value>This pattern looks for a match and returns a true/false result for matching, leaving the engine at the end of the match.</value>
+  </data>
+  <data name="MultipleLinePattern" xml:space="preserve">
+    <value>This pattern allows a search for matches that span multiple lines. This is a PCRE modifier.</value>
+  </data>
+  <data name="NegativeLookAheadAssertion" xml:space="preserve">
+    <value>This pattern looks for a match and returns a true/false result for matching, leaving the engine at the beginning of a sequence that is not the pattern.</value>
+  </data>
+  <data name="NegativeLookbehindAssertion" xml:space="preserve">
+    <value>This pattern looks for a match and returns a true/false result, leaving the engine at the end of a subsequence that is not the requested pattern.</value>
+  </data>
+  <data name="NthReplacement" xml:space="preserve">
+    <value>This pattern allows the ability to dictate how many non-passive groups are matched.</value>
+  </data>
+  <data name="OnceOnlyAssertion" xml:space="preserve">
+    <value>This pattern looks for a match and returns a true/false result, leaving the engine at the only match for the pattern in the sequence.</value>
+  </data>
+  <data name="POSIXAllChar" xml:space="preserve">
+    <value>This pattern refers to all letter or digit characters.</value>
+  </data>
+  <data name="POSIXAlpha" xml:space="preserve">
+    <value>This pattern refers to all letter characters.</value>
+  </data>
+  <data name="POSIXBlank" xml:space="preserve">
+    <value>This pattern refers to the space or tab characters.</value>
+  </data>
+  <data name="POSIXControl" xml:space="preserve">
+    <value>This pattern refers to control characters.</value>
+  </data>
+  <data name="POSIXDigit" xml:space="preserve">
+    <value>This pattern refers to all digit characters.</value>
+  </data>
+  <data name="POSIXGraph" xml:space="preserve">
+    <value>This pattern refers to printed characters.</value>
+  </data>
+  <data name="POSIXHex" xml:space="preserve">
+    <value>This pattern refers to hexadecimal characters.</value>
+  </data>
+  <data name="POSIXLower" xml:space="preserve">
+    <value>This pattern refers to lower case letters.</value>
+  </data>
+  <data name="POSIXPrint" xml:space="preserve">
+    <value>This pattern refers to printed characters and spaces.</value>
+  </data>
+  <data name="POSIXPunct" xml:space="preserve">
+    <value>This pattern refers to all punctuation characters.</value>
+  </data>
+  <data name="POSIXUpper" xml:space="preserve">
+    <value>This pattern refers to upper case letters.</value>
+  </data>
+  <data name="POSIXWord" xml:space="preserve">
+    <value>This pattern refers to all digits, letters, and underscore characters.</value>
+  </data>
+  <data name="SecondReplacement" xml:space="preserve">
+    <value>This pattern allows the ability to replace a given sequence with another in a pattern that does not repeat. </value>
+  </data>
+  <data name="StringAsSinglePattern" xml:space="preserve">
+    <value>This pattern allows a search that treats each string as a line. This is a PCRE modifier.</value>
+  </data>
+  <data name="UngreedyPattern" xml:space="preserve">
+    <value>This pattern allows ungreedy matches. This is a PCRE modifier.</value>
+  </data>
+</root>

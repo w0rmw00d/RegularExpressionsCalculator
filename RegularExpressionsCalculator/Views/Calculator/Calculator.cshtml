@@ -1,0 +1,61 @@
+﻿@{
+    ViewBag.Title = "Calculator";
+}
+
+<div>
+    <div style="float:left;">
+        <dl class="dl-horizontal">
+            <dt>
+                <label for="user-exp" id="exp-label">Enter your expression:</label>
+            </dt>
+            <dd>
+                <input tabindex="" class="form-control" id="user-exp" />
+            </dd>
+            <dt>
+                <label for="exp-text">What it means:</label>
+            </dt>
+            <dd>
+                <textarea tabindex="" id="exp-text" rows="4" cols="80" readonly="readonly"></textarea>
+            </dd>
+            <dt>
+                <label for="text-analyze">Text to be analyzed:</label>
+            </dt>
+            <dd>
+                <textarea tabindex="" id="text-analyze" rows="20" cols="80">@ViewBag.SampleText</textarea>
+            </dd>
+        </dl>
+        <div class="pull-right">
+            <a id="calc">Calculate</a>
+            <a id="parse-toggle" data-toggle="popover" style="margin: 10px 0 0 10px;" data-trigger="focus" title="NOTE" data-content="Feature currently in alpha.">Toggle Plain Text</a>
+            <a id="help-parse"><b>?</b></a>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    var parse = false;
+
+    $('#parse-toggle').click(function () {
+        if (parse == false) {
+            $('#exp-label').text("Enter your plain text:");
+            parse = true;
+        }
+        else {
+            $('#exp-label').text("Enter your expression:");
+            parse = false;
+        }
+    });
+
+    $('#calc').click(function () {
+        if(parse === false)
+        {
+
+        }
+        else if (parse === true) {
+
+        }
+
+    });
+
+</script>

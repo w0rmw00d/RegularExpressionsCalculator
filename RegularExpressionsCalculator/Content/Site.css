@@ -1,24 +1,229 @@
 ﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+    background-color: #101010;
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+    margin: 0;
+    padding: 5% 0 5% 20%;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
 */
-.dl-horizontal dt {
+.dl-horizontal {
     white-space: normal;
+    margin:0;
+}
+
+dt, dd {
+    margin:10px;
 }
 
 /* Set width on the form input elements since they're 100% wide by default */
 input,
 select,
 textarea {
-    max-width: 280px;
+    background-color: white;
+    overflow-y: auto;
+    overflow-wrap: break-word;
+    overflow-x: hidden;
+    resize: none;
+    max-width: 350px;
+}
+
+textarea {
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    border-radius:5px;
+}
+
+/* for the side menu on the layout page */
+.side-nav {
+    background-color: #202020;
+    height: 100%;
+    width: 20%;
+    overflow: hidden;
+    align-content: center;
+    position: fixed;
+    margin: 0;
+    padding: 5% 0 5% 0;
+}
+
+/* for the overlay used by all three pages */
+.overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    margin: 3% 0 0 20%;
+    background-color: rgba(0,0,0,0.9); /* background, with opacity */
+    overflow-x: hidden;
+    transition: 0.5s; /* animation delay on overlay slide */
+}
+
+/* alignment and styling for overlay content */
+.overlay-content {
+    margin: 2% 0 0 0;
+    padding: 10% 14% 0 5%;
+    color: lightgray;
+    position: relative;
+    text-align: center;
+}
+
+.overlay-title {
+    font: 18pt arial, verdana;
+}
+
+/* links for the first level of overlay */
+.overlay a {
+    margin: 1%;
+    text-decoration: none;
+    font: bolder 16pt arial, verdana;
+    color: #058bd8;
+    display: block;
+}
+
+/* overlay hover */
+.overlay a:hover, .overlay a:focus {
+    color:lightgray;
+    text-decoration: none;
+}
+
+/* overlay close button */
+.overlay .close-btn {
+    position: absolute;
+    top:0;
+    right: 2%;
+    margin: 2% 1% 5% 0;
+    font-size: 35pt;
+    z-index: 2;
+}
+
+.body-panel {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    padding: 0;
+    background-color: inherit;
+    align-content: center;
+}
+
+a {
+    text-decoration: none;
+    background-color:inherit;
+    text-emphasis:none;
+    font: 14pt arial, verdana;
+}
+
+ul {
+    text-decoration:none;
+    list-style-type:none;
+    background-color:inherit;
+    display:inline-block;
+}
+
+a:hover {
+    color:lightslategray;
+    text-decoration:none !important;
+    background-color: none;
+}
+
+a:active {
+    text-decoration:none !important;
+    outline:none !important;
+}
+
+a:focus {
+    text-decoration:none !important;
+    outline:none !important;
+}
+
+.dropdown-toggle {
+    font-size:12pt;
+}
+
+.dropdown-menu {
+    background-color:lightgrey;
+    color: black;
+    font: bold;
+}
+
+::-webkit-scrollbar {
+    background-color:#202020;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #313131;
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 10px rgba(0,0,0,1);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #058bd8;
+    height:20px;
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 20px rgba(0,0,0,1);
+}
+
+label {
+    background-color:inherit;
+    color:darkgray;
+    text-emphasis: none;
+    font: 14px;
+}
+
+/* used for internal boxes housing content */
+.content-box {
+    width: 25%;
+    height: 100%;
+    background-color: white;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+/* used for internal boxes housing content, title div */
+.content-title {
+    background-color: dimgrey;
+    text-align:center;
+    color: black;
+    font:bold 16pt arial,verdana;
+    margin: 0 0 2px 0;
+    padding: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -webkit-border-top-left-radius: 5px;
+    -moz-border-radius-topright: 5px;
+    -moz-border-radius-topleft: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+/* used for internal boxes housing content, text div */
+.content-textbox {
+    background-color: grey;
+    color: black;
+    padding: 5px 10px 5px 10px;
+    text-emphasis: none;
+    -webkit-border-bottom-right-radius: 5px;
+    -webkit-border-bottom-left-radius: 5px;
+    -moz-border-radius-bottomright: 5px;
+    -moz-border-radius-bottomleft: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+/* media adjustment for overlay */
+@media screen and (max-height: 450px) {
+    .overlay a {font-size: 10pt}
+    .overlay .close-btn {
+        font-size:16pt;
+        top: 15px;
+        right: 30px;
+    }
+}
+
+/* media adjustment for page */
+@media screen and (max-height: 450px) {
+    a {font-size:10pt}
+    .side-nav {width:0px}
 }

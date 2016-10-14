@@ -1,42 +1,105 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en-us">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <meta name="keywords" content="regex,regular expressions,regex calculator,regular expressions calculator,regex help,regex cheatsheet,regex javascript, regex js, learning regex, regex tutorials, what is regex" />
+    <meta name="description" content="A learning calculator for regular expressions, designed for students and beginners." />
     @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
+    <div>
+        <nav class="navbar navbar-dark navbar-inverse navbar-fixed-top">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                <span id="logo" class="pull-left" style="margin-left: 8px; margin-right: 4px;"><img src="~/Content/logo-thicker.png" /></span>
+                <a class="navbar-brand">RegCalc</a>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a tabindex="" class="dropdown-toggle" role="button" data-toggle="dropdown">Navigation</a>
+                    <ul class="dropdown-menu">
+                        <li><a tabindex="" class="btn btn-secondary" role="button" onclick='location.href="/RegularEngine"'>The Regular Expressions Engine</a></li>
+                        <li><a tabindex="" class="btn btn-secondary" role="button" onclick='location.href="/Calculator"'>Calculator</a></li>
+                        <li><a tabindex="" class="btn btn-secondary" role="button" onclick='location.href="/RegularLang"'>Regular Languages and Finite Automata</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a tabindex="" class="dropdown-toggle" role="button" data-toggle="dropdown">Help</a>
+                    <ul class="dropdown-menu">
+                        <li><a tabindex="" class="btn btn-secondary" role="button" data-toggle="popover" data-trigger="focus" data-placement="right" data-content="Enter any regular expression you wish to test in the input box and press the run button to see what patterns it matches in the text box." data-animation="true">What do I do?</a></li>
+                        <li><a tabindex="" class="btn btn-secondary" role="button" data-toggle="popover" data-trigger="focus" data-placement="right" data-content="If you enter a pattern that won't resolve, a popup will tell you what's wrong.">What happens if I enter something wrong?</a></li>
+                        <li><a tabindex="" class="btn btn-secondary" role="button" data-toggle="popover" data-trigger="focus" data-placement="right" data-content="If there's an error in your pattern, a popup should appear that tells you what's wrong. If this does not occur, please contact me.">Why isn't it doing anything?</a></li>
+                        <li><a tabindex="" class="btn btn-secondary" role="button" data-toggle="popover" data-trigger="focus" data-placement="right" data-content="Regular expressions are a necessary part of understanding how to parse text efficiently, but they can be very difficult to understand. This calculator can help you learn them.">Why a regular expressions calculator?</a></li>
+                        <li><a tabindex="" class="btn btn-secondary" role="button" data-toggle="popover" data-trigger="focus" data-placement="right" data-content="Toggle the option 'Parse Plain Text' in the calculator side menu. NOTE: This feature is in alpha and may not work.">No really, help me.</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a tabindex="" class="dropdown-toggle" data-toggle="dropdown">Other Regex Resources</a>
+                    <ul class="dropdown-menu">
+                        <li><a tabindex="" class="btn btn-secondary" role="button" onclick="window.open='https://www.cheatography.com/davechild/cheat-sheets/regular-expressions/'">Cheatography</a></li>
+                        <li><a tabindex="" class="btn btn-secondary" role="button" onclick="window.open='http://www.regular-expressions.info/tutorial.html'">Regular-Expressions.Info</a></li>
+                        <li><a tabindex="" class="btn btn-secondary" role="button" onclick="window.open='http://www.rexegg.com/'">RexEgg</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a tabindex="" class="dropdown-toggle" data-toggle="dropdown">About me</a>
+                    <ul class="dropdown-menu">
+                        <li><a tabindex="" class="btn btn-secondary" role="button" href="mailto:g33kycarrie@gmail.com?Subject=Regular%20Expressions%20Calculator" target="_blank">Email Me</a></li>
+                        <li><a tabindex="" class="btn btn-secondary" role="button" onclick="location.href='https://github.com/w0rmw00d'">Github</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div>
+        <nav class="navbar navbar-inverse navbar-left side-nav pull-left">
+            @if (ViewBag.Title == "Calculator")
+            {
+                <div class="navbar-header"><a tabindex="" id="symbol-toggle" class="navbar-brand">Regex Symbols</a></div>
+                <ul class="nav">
+                    <li><a tabindex="" role="button" onclick='openOverlay("Anchor")'>Anchors &gt;</a></li>
+                    <li><a tabindex="" role="button" onclick='openOverlay("Assert")'>Assertions &gt;</a></li>
+                    <li><a tabindex="" role="button" onclick='openOverlay("Character")'>Character Classes &gt;</a></li>
+                    <li><a tabindex="" role="button" onclick='openOverlay("Escape")'>Escape Characters &gt;</a></li>
+                    <li><a tabindex="" role="button" onclick='openOverlay("Group")'>Groups and Ranges &gt;</a></li>
+                    <li><a tabindex="" role="button" onclick='openOverlay("Quant")'>Quantifiers &gt;</a></li>
+                    <li><a tabindex="" role="button" onclick='openOverlay("Mod")'>Pattern Modifiers &gt;</a></li>
+                    <li><a tabindex="" role="button" onclick='openOverlay("Special")'>Special Characters &gt;</a></li>
+                    <li><a tabindex="" role="button" onclick='openOverlay("Replace")'>String Replacement &gt;</a></li>
                 </ul>
-            </div>
-        </div>
+            }
+            else if (ViewBag.Title == "Regular Engine")
+            {
+                <div class="navbar-header"><a tabindex="" id="engine-toggle" class="navbar-brand">Regular Engine</a></div>
+                <ul class="nav">
+                    <li><a tabindex="" role="button">Engine</a></li>
+                </ul>
+            }
+            else if (ViewBag.Title == "Regular Language")
+            {
+                <div class="navbar-header"><a tabindex="" id="language-toggle" class="navbar-brand">Regular Language</a></div>
+                <ul class="nav">
+                    <li><a tabindex="" role="button">Language</a></li>
+                </ul>
+            }
+        </nav>
     </div>
-    <div class="container body-content">
+    @Html.Partial("_Overlays")
+    <div id="body" class="container body-content">
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+        @Scripts.Render("~/bundles/modernizr")
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @Scripts.Render("~/bundles/layout")
+        @Scripts.Render("~/bundles/calculator")
+        @RenderSection("scripts", required: false)
+    </div>
+    <script>
+        // toggles popovers
+        $().ready(function () {
+            $('[data-toggle="popover"]').popover();
+        });
+    </script>
 </body>
 </html>

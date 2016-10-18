@@ -22,6 +22,14 @@ namespace RegularExpressionsCalculator
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/calculator").Include(
+                      "~/Scripts/calculator-scripts.js",
+                      "~/Scripts/overlay-scripts.js",
+                      "~/Scripts/layout-scripts.js"
+                      //"~/Scripts/engine-scripts.js",
+                      //"~/Scripts/reg-lang-scripts.js"
+                      ));
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));

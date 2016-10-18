@@ -126,6 +126,16 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="App_Data\RegexText.Designer.cs">
+      <DependentUpon>RegexText.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="App_Data\TextKeys.Designer.cs">
+      <DependentUpon>TextKeys.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="App_Data\SampleText.Designer.cs">
       <DependentUpon>SampleText.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -160,7 +170,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Scripts\calculator_scripts.js" />
+    <Content Include="Scripts\calculator-scripts.js" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -179,7 +189,9 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\layout-scripts.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\overlay-scripts.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
@@ -214,6 +226,14 @@
     <EmbeddedResource Include="App_Data\RegexLinks.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RegexLinks.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_Data\RegexText.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RegexText.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_Data\TextKeys.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>TextKeys.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="App_Data\SampleText.resx">
       <Generator>ResXFileCodeGenerator</Generator>

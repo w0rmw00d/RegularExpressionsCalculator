@@ -91,21 +91,8 @@
         @Scripts.Render("~/bundles/modernizr")
         @Scripts.Render("~/bundles/jquery")
         @Scripts.Render("~/bundles/bootstrap")
+        @Scripts.Render("~/bundles/calculator")
         @RenderSection("scripts", required: false)
     </div>
-
-    <script>
-        function toggleSideNav() {
-            var nav = document.getElementById("side-nav");
-            if (nav.hidden) {
-                nav.hidden = false;
-                document.getElementById("body").className = "body-content";
-            }
-            else {
-                nav.hidden = true;
-                document.getElementById("body").className = "body-content-minimized";
-            }
-        }
-    </script>
 </body>
 </html>

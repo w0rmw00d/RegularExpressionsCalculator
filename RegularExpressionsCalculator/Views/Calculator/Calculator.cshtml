@@ -1,7 +1,7 @@
 ﻿@{
     ViewBag.Title = "Calculator";
 }
-
+@* NOTE: Content in text-analyze has been parsed to add html in calculator controller. *@
 <div>
     <div style="float:left;">
         <dl class="dl-horizontal">
@@ -25,62 +25,8 @@
             </dd>
         </dl>
         <div class="pull-right" style="margin: 10px;">
-            <a id="calc" onclick="calcTrivial()" style="margin: 0 20px 0 0;">Calculate</a>
-            <a id="parse-toggle" onclick="parseToggle()" data-toggle="popover" data-trigger="focus" title="NOTE" data-content="Feature currently in alpha.">Plain Text</a>
+            <a id="calc" style="margin: 0 20px 0 0;">Calculate</a>
+            <a id="parse-toggle" data-toggle="popover" data-trigger="focus" title="NOTE" data-content="Feature currently in alpha.">Plain Text</a>
         </div>
     </div>
 </div>
-
-<script>
-    // toggles popovers
-    $().ready(function () {
-        $('[data-toggle="popover"]').popover();
-    });
-
-    // flag for whether plain text parsing or regex expressions are toggled
-    var parse = false;
-
-    // changes text on input and first text area labels, toggles flag for parse type, sets readOnly property on first text area
-    function parseToggle() {
-        if (parse == false) {
-            $('#exp-label').text("Enter your plain text:");
-            $('#text-label').text("Regex Expression:");
-            document.getElementById("exp-text").readOnly = false;
-            parse = true;
-        }
-        else {
-            $('#exp-label').text("Enter your expression:");
-            $('#text-label').text("What it means:");
-            document.getElementById("exp-text").readOnly = true;
-            parse = false;
-        }
-    }
-
-    // trivial caller for regex and/or plain text parse methods
-    function calcTrivial() {
-        if (!parse) parseRegEx();
-        else if (parse) parseText();
-    }
-
-    // regex parse, given user input written as regex
-    function parseRegEx() {
-        var testElem = document.getElementById("text-analyze");
-        var trimTest = testElem.textContent.trim();
-        var parser = RegExp(document.getElementById("user-exp").textContent.trim());
-        try {
-            var matched = parser.exec(trimTest);
-            for (var a = 0; a < matched.length; a++) {
-                var startIndx = testTxt.textContent.indexOf(matched[a]);
-                var endIndx = testTxt.textContent.indexOf(matched[a]) + matched[a].length;
-                testTxt.textContent = testTxt.textContent.substring(0, startIndx-1) + "<span class='text-highlight'>" + testTxt.textContent.substring(startIndx, endIndx) + "</span>" + testTxt.textContent.substring(endIndx + 1, testTxt.textContent.length);
-            }
-        }
-        catch (error) {
-            alert("Write me an error popup, yeh lazy code monkey.");
-        }
-    }
-    // plain text parse, given user input written as plain text
-    function parseText() {
-        document.getElementById("exp-text").value("Coming soon");
-    }
-</script>

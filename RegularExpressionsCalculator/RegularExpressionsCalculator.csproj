@@ -150,6 +150,9 @@
       <DependentUpon>RegexDefinitions.resx</DependentUpon>
     </Compile>
     <Compile Include="Controllers\CalculatorController.cs" />
+    <Compile Include="Controllers\RegularEngineController.cs" />
+    <Compile Include="Controllers\RegularLangController.cs" />
+    <Compile Include="Controllers\RootController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -208,8 +211,8 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Calculator\Calculator.cshtml" />
-    <Content Include="Views\Calculator\RegularEngine.cshtml" />
-    <Content Include="Views\Calculator\RegularLang.cshtml" />
+    <Content Include="Views\RegularEngine\RegularEngine.cshtml" />
+    <Content Include="Views\RegularLang\RegularLang.cshtml" />
     <Content Include="Views\Shared\_Overlays.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -247,6 +250,7 @@
   <ItemGroup>
     <Content Include="Scripts\jquery-3.1.1.min.map" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

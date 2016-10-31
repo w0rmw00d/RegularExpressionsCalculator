@@ -21,6 +21,8 @@ function cleanOverlay() {
     var overlayDef = document.getElementById("overlay-content");
     var overlayTitle = document.getElementById("overlay-title");
     var overlayLinks = document.getElementById("overlay-links");
+    var overlayKeyTitle = document.getElementById("overlay-keytitle");
+    var overlayKeyWords = document.getElementById("overlay-keywords");
 
     while (overlayTitle.firstChild) {
         overlayTitle.removeChild(overlayTitle.firstChild);
@@ -31,6 +33,12 @@ function cleanOverlay() {
     while (overlayLinks.firstChild) {
         overlayLinks.removeChild(overlayLinks.firstChild);
     }
+    while (overlayKeyTitle.firstChild) {
+        overlayKeyTitle.removeChild(overlayKeyTitle.firstChild);
+    }
+    while (overlayKeyWords.firstChild) {
+        overlayKeyWords.removeChild(overlayKeyWords.firstChild);
+    }
 }
 
 // trivial caller for methods used to fill overlay elements. called by openOverlay.
@@ -39,6 +47,8 @@ function fillOverlay(name) {
     setOverlayTitle(name);
     setOverlayDef(name);
     setOverlayLinks(name);
+    setOverlayKeyTitle();
+    setOverylayKeyWords(name);
 }
 
 // fills overlay title element after ajax call to calculator 
@@ -46,7 +56,7 @@ function fillOverlay(name) {
 function setOverlayTitle(name) {
     $.ajax({
         method: 'POST',
-        url: '@Url.Action("GetOverlayTitle", "Calculator")',
+        url: '@Url.Action("getOverlayTitle", "Root")',
         data: { key: name },
         success: function (result) {
             var titleDiv = document.getElementById('overlay-title');
@@ -63,7 +73,7 @@ function setOverlayTitle(name) {
 function setOverlayDef(name) {
     $.ajax({
         method: 'POST',
-        url: '@Url.Action("GetOverlayDef", "Calculator")',
+        url: '@Url.Action("getOverlayDef", "Root")',
         data: { key: name },
         success: function (result) {
             var contentDiv = document.getElementById('overlay-content');
@@ -81,7 +91,7 @@ function setOverlayDef(name) {
 function setOverlayLinks(name) {
     $.ajax({
         method: 'POST',
-        url: '@Url.Action("GetOverlayLinks", "Calculator")',
+        url: '@Url.Action("getOverlayLinks", "Root")',
         data: { key: name },
         success: function (result) {
             var links = document.getElementById('overlay-links');
@@ -97,9 +107,35 @@ function setOverlayLinks(name) {
                 }
                 links.addEventListener("click", function (event) {
                     cleanOverlay();
-                    SetOverlayTitle(event.target.id);
-                    SetOverlayDef(event.target.id);
+                    setOverlayTitle(event.target.id);
+                    setOverlayDef(event.target.id);
                 });
+            }
+        }
+    });
+}
+
+// fills overlay keytitle element. will not fill element if children already exist.
+function setOverlayKeyTitle() {
+    var title = document.getElementById("overlay-keytitle");
+    if(title.childNodes.length == 0) {
+        var elem = document.createTextNode("Keywords:");
+        title.appendChild(elem);
+    }
+}
+
+// fills overlay keyword element after ajax call to calculator 
+// controller. will not fill element if children already exist.
+function setOverlayKeyWords(name) {
+    $.ajax({
+        method: 'POST',
+        url: '@Url.Action("getOverlayKeyWords", "Root")',
+        data: { key: name },
+        success: function (result) {
+            var elem = document.getElementById('overlay-keywords');
+            if (links.childNodes.length == 0) {
+                var content = document.createTextNode(result.KeyWords);
+                elem.appendChild(content);
             }
         }
     });

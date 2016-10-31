@@ -1,17 +1,20 @@
-﻿using System;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using System.Collections;
 using System.Globalization;
-using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
 namespace RegularExpressionsCalculator.Controllers
 {
-    public class CalculatorController : Controller
+    public class CalculatorController : RootController
     {
+        /// <summary>
+        /// controller for calculator view. fetches randomized text from resource file and
+        /// formats it for display in the calculator view. serves as application home page.
+        /// </summary>
+        /// <returns></returns>
         public ActionResult Calculator()
         {
-            var split = GetText().Split('\n');
+            var split = getText().Split('\n');
             var formatted = string.Empty;
             foreach (var item in split)
             {
@@ -21,31 +24,21 @@ namespace RegularExpressionsCalculator.Controllers
             return View();
         }
 
-        public ActionResult RegularEngine()
-        {
-            return View();
-        }
-
-        public ActionResult RegularLanguages()
-        {
-            return View();
-        }
-
         #region Helpers
-        public int GetRand()
-        {
-            Random random = new Random();
-            return random.Next(65, 90);
-        }
-
-        public string GetText()
+        /// <summary>
+        /// fetches randomized text from resource file. calls getRand in Root to get randomized  
+        /// digit in ASCII character range and interprets randomized digit as character, then 
+        /// compares it to the first letter of each resource title in SampleText to select text.
+        /// </summary>
+        /// <returns></returns>
+        public string getText()
         {
             var text = string.Empty;
             var set = App_Data.SampleText.ResourceManager.GetResourceSet(CultureInfo.CurrentUICulture, true, true);
 
             while (string.IsNullOrEmpty(text))
             {
-                var rand = (char) GetRand();
+                var rand = (char) getCharRand();
                 foreach (DictionaryEntry entry in set)
                 {
                     var firstChar = entry.Key.ToString().ToUpper().ToCharArray()[0];
@@ -58,33 +51,12 @@ namespace RegularExpressionsCalculator.Controllers
             return text;
         }
 
-        public JsonResult getOverlayTitle(string key)
-        {
-            var regexset = App_Data.RegexSymbols.ResourceManager.GetResourceSet(CultureInfo.CurrentUICulture, true, true);
-            return Json(new { Title = regexset.GetString(key) });
-        }
-
-        public JsonResult getOverlayDef(string key)
-        {
-            var defset = App_Data.RegexDefinitions.ResourceManager.GetResourceSet(CultureInfo.CurrentUICulture, true, true);
-            return Json(new { Definition = defset.GetString(key) });
-        }
-        
-        public JsonResult getOverlayLinks(string key)
-        {
-            var list = new List<Tuple<string, string>>();
-            var linkset = App_Data.RegexLinks.ResourceManager.GetResourceSet(CultureInfo.CurrentUICulture, true, true);
-            var linkStr = linkset.GetString(key).Split(';');
-
-            foreach (var link in linkStr)
-            {
-                var split = link.Split(',');
-                list.Add(Tuple.Create(split[0], split[1]));
-            }
-            
-            return Json(new { Links = list });
-        }
-
+        /// <summary>
+        /// interprets input, splitting on '\', and attempts to parse it into
+        /// commands, then fetches plain text interpretation from resource file.
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
         public JsonResult interpretRegEx(string input)
         {
             var message = string.Empty;
@@ -104,6 +76,12 @@ namespace RegularExpressionsCalculator.Controllers
             return Json(new { interpreted = message });
         }
 
+        /// <summary>
+        /// interprets input, splitting it on keywords from a resource file, and attempts to parse
+        /// it as regex, sending the results back to the page as a regex string for display in user-exp.
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
         public JsonResult interpretPlainText(string input)
         {
             var message = string.Empty;

@@ -61,255 +61,524 @@ namespace RegularExpressionsCalculator.App_Data {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Although it is a cold evening, 
-        ///down by one of the fishhouses 
-        ///an old man sits netting, 
-        ///his net, in the gloaming almost invisible, 
-        ///a dark purple-brown, 
-        ///and his shuttle worn and polished. 
-        ///The air smells so strong of codfish 
-        ///it makes one’s nose run and one’s eyes water. 
-        ///The five fishhouses have steeply peaked roofs 
-        ///and narrow, cleated gangplanks slant up 
-        ///to storerooms in the gables 
-        ///for the wheelbarrows to be pushed up and down on. 
-        ///All is silver: the heavy surface of the sea, 
-        ///swelling s [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to after replacement, after.
         /// </summary>
-        internal static string AtTheFishhouses {
+        internal static string AfterReplace {
             get {
-                return ResourceManager.GetString("AtTheFishhouses", resourceCulture);
+                return ResourceManager.GetString("AfterReplace", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &quot;You are old, Father William,&quot; the young man said,
-        ///&quot;And your hair has become very white;
-        ///And yet you incessantly stand on your head—
-        ///Do you think, at your age, it is right?&quot;
-        ///
-        ///&quot;In my youth,&quot; Father William replied to his son,
-        ///&quot;I feared it might injure the brain;
-        ///But now that I&apos;m perfectly sure I have none,
-        ///Why, I do it again and again.&quot;
-        ///
-        ///&quot;You are old,&quot; said the youth, &quot;As I mentioned before,
-        ///And have grown most uncommonly fat;
-        ///Yet you turned a back-somersault in at the door—
-        ///Pray, what is the re [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to at least x times, at least.
         /// </summary>
-        internal static string FatherWilliam {
+        internal static string AtLeast {
             get {
-                return ResourceManager.GetString("FatherWilliam", resourceCulture);
+                return ResourceManager.GetString("AtLeast", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to A is for Amy who fell down the stairs.
-        ///B is for Basil assaulted by bears.
-        ///C is for Clair who wasted away.
-        ///D is for Desmond thrown out of the sleigh.
-        ///E is for Ernest who choked on a peach.
-        ///F is for Fanny, sucked dry by a leech.
-        ///G is for George, smothered under a rug.
-        ///H is for Hector, done in by a thug.
-        ///I is for Ida who drowned in the lake.
-        ///J is for James who took lye, by mistake.
-        ///K is for Kate who was struck with an axe.
-        ///L is for Leo who swallowed some tacks.
-        ///M is for Maud who was swept out to se [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to before replacement, before.
         /// </summary>
-        internal static string GashlycrumbTinies {
+        internal static string BeforeReplace {
             get {
-                return ResourceManager.GetString("GashlycrumbTinies", resourceCulture);
+                return ResourceManager.GetString("BeforeReplace", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Now we&apos;re here again, the fat suicide
-        ///searching the garbage for a blade of hope,
-        ///the worn stairs sighing in the dark,
-        ///the bandages unwinding, the black holes
-        ///the needles made, the puffed tattoo,
-        ///the great belly arguing in its bed.
-        ///
-        ///We come again and again on our bad feet
-        ///or running as the water runs all night
-        ///in the old pipes of the Hotel Florida.
-        ///She dozes on the bowl, our mother
-        ///of Malaga, and sings a little song of home
-        ///and washes the city slowly from her thighs.
-        ///
-        ///All that was desire, all t [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to literally, begin literal, interpret literally, literal.
         /// </summary>
-        internal static string Here {
+        internal static string BeginLiteral {
             get {
-                return ResourceManager.GetString("Here", resourceCulture);
+                return ResourceManager.GetString("BeginLiteral", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ’Twas brillig, and the slithy toves 
-        ///      Did gyre and gimble in the wabe: 
-        ///All mimsy were the borogoves, 
-        ///      And the mome raths outgrabe. 
-        ///
-        ///“Beware the Jabberwock, my son! 
-        ///      The jaws that bite, the claws that catch! 
-        ///Beware the Jubjub bird, and shun 
-        ///      The frumious Bandersnatch!” 
-        ///
-        ///He took his vorpal sword in hand; 
-        ///      Long time the manxome foe he sought— 
-        ///So rested he by the Tumtum tree 
-        ///      And stood awhile in thought. 
-        ///
-        ///And, as in uffish thought he stood, 
-        ///      The Jab [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to boundary, word end.
         /// </summary>
-        internal static string Jabberwocky {
+        internal static string BoundaryAnchor {
             get {
-                return ResourceManager.GetString("Jabberwocky", resourceCulture);
+                return ResourceManager.GetString("BoundaryAnchor", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to I have eaten
-        ///the plums
-        ///that were in
-        ///the icebox
-        ///
-        ///and which
-        ///you were probably
-        ///saving
-        ///for breakfast
-        ///
-        ///Forgive me
-        ///they were delicious
-        ///so sweet
-        ///and so cold.
+        ///   Looks up a localized string similar to x or y or z, any of the following.
         /// </summary>
-        internal static string JustToSay {
+        internal static string BracketRange {
             get {
-                return ResourceManager.GetString("JustToSay", resourceCulture);
+                return ResourceManager.GetString("BracketRange", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The art of losing isn’t hard to master; 
-        ///so many things seem filled with the intent 
-        ///to be lost that their loss is no disaster. 
-        ///
-        ///Lose something every day. Accept the fluster 
-        ///of lost door keys, the hour badly spent. 
-        ///The art of losing isn’t hard to master. 
-        ///
-        ///Then practice losing farther, losing faster: 
-        ///places, and names, and where it was you meant 
-        ///to travel. None of these will bring disaster. 
-        ///
-        ///I lost my mother’s watch. And look! my last, or 
-        ///next-to-last, of three loved houses went. 
-        ///The a [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to beginning of word, beginning of line, begin.
         /// </summary>
-        internal static string OneArt {
+        internal static string CaretAnchor {
             get {
-                return ResourceManager.GetString("OneArt", resourceCulture);
+                return ResourceManager.GetString("CaretAnchor", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Out of burlap sacks, out of bearing butter, 
-        ///Out of black bean and wet slate bread, 
-        ///Out of the acids of rage, the candor of tar, 
-        ///Out of creosote, gasoline, drive shafts, wooden dollies, 
-        ///They Lion grow. 
-        ///                        Out of the gray hills 
-        ///Of industrial barns, out of rain, out of bus ride, 
-        ///West Virginia to Kiss My Ass, out of buried aunties, 
-        ///Mothers hardening like pounded stumps, out of stumps, 
-        ///Out of the bones’ need to sharpen and the muscles’ to stretch,   
-        ///They Lion grow. 
-        ///     [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to control, control character.
         /// </summary>
-        internal static string TheyFeedTheyLion {
+        internal static string ControlChar {
             get {
-                return ResourceManager.GetString("TheyFeedTheyLion", resourceCulture);
+                return ResourceManager.GetString("ControlChar", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to I wake to sleep, and take my waking slow.   
-        ///I feel my fate in what I cannot fear.   
-        ///I learn by going where I have to go. 
-        ///
-        ///We think by feeling. What is there to know?   
-        ///I hear my being dance from ear to ear.   
-        ///I wake to sleep, and take my waking slow. 
-        ///
-        ///Of those so close beside me, which are you?   
-        ///God bless the Ground!   I shall walk softly there,   
-        ///And learn by going where I have to go. 
-        ///
-        ///Light takes the Tree; but who can tell us how?   
-        ///The lowly worm climbs up a winding stair;   
-        ///I w [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to digit, digits, digit characters.
         /// </summary>
-        internal static string Waking {
+        internal static string DigitChar {
             get {
-                return ResourceManager.GetString("Waking", resourceCulture);
+                return ResourceManager.GetString("DigitChar", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The sun was shining on the sea,
-        ///Shining with all his might:
-        ///He did his very best to make
-        ///The billows smooth and bright--
-        ///And this was odd, because it was
-        ///The middle of the night.
-        ///
-        ///The moon was shining sulkily,
-        ///Because she thought the sun
-        ///Had got no business to be there
-        ///After the day was done--
-        ///&quot;It&apos;s very rude of him,&quot; she said,
-        ///&quot;To come and spoil the fun!&quot;
-        ///
-        ///
-        ///The sea was wet as wet could be,
-        ///The sands were dry as dry.
-        ///You could not see a cloud, because
-        ///No cloud was in the sky:
-        ///No birds wer [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to digit range, any of the following digits.
         /// </summary>
-        internal static string WalrusCarpenter {
+        internal static string DigitRange {
             get {
-                return ResourceManager.GetString("WalrusCarpenter", resourceCulture);
+                return ResourceManager.GetString("DigitRange", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to My brother comes home from work 
-        ///and climbs the stairs to our room. 
-        ///I can hear the bed groan and his shoes drop   
-        ///one by one. You can have it, he says. 
-        ///
-        ///The moonlight streams in the window   
-        ///and his unshaven face is whitened 
-        ///like the face of the moon. He will sleep 
-        ///long after noon and waken to find me gone. 
-        ///
-        ///Thirty years will pass before I remember   
-        ///that moment when suddenly I knew each man   
-        ///has one brother who dies when he sleeps   
-        ///and sleeps when he rises to face this life, 
-        ///
-        ///an [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to end, end of word, end of line.
         /// </summary>
-        internal static string YouCanHaveIt {
+        internal static string DollarAnchor {
             get {
-                return ResourceManager.GetString("YouCanHaveIt", resourceCulture);
+                return ResourceManager.GetString("DollarAnchor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to literally, end literal, interpret literally literal.
+        /// </summary>
+        internal static string EndLiteral {
+            get {
+                return ResourceManager.GetString("EndLiteral", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to replace whole, entire replacement, replace all.
+        /// </summary>
+        internal static string EntireReplacement {
+            get {
+                return ResourceManager.GetString("EntireReplacement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to match exactly x times, match exact x, exactly x.
+        /// </summary>
+        internal static string Exact {
+            get {
+                return ResourceManager.GetString("Exact", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to feed character, feed.
+        /// </summary>
+        internal static string FeedChar {
+            get {
+                return ResourceManager.GetString("FeedChar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to first replacement, replace first.
+        /// </summary>
+        internal static string FirstReplacement {
+            get {
+                return ResourceManager.GetString("FirstReplacement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to global, search globally.
+        /// </summary>
+        internal static string GlobalPattern {
+            get {
+                return ResourceManager.GetString("GlobalPattern", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to greedy one, greedy match one or more, one or more, 1 or more.
+        /// </summary>
+        internal static string GreedyOne {
+            get {
+                return ResourceManager.GetString("GreedyOne", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to greedy zero, greedy match zero or more, zero or more, 0 or more.
+        /// </summary>
+        internal static string GreedyZero {
+            get {
+                return ResourceManager.GetString("GreedyZero", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to anything in the following group, group range x, range x.
+        /// </summary>
+        internal static string GroupRange {
+            get {
+                return ResourceManager.GetString("GroupRange", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to hexadecimal characters, hex char, hex string char, hex string.
+        /// </summary>
+        internal static string HexStrChar {
+            get {
+                return ResourceManager.GetString("HexStrChar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to if x then y, if x else y, if x do y.
+        /// </summary>
+        internal static string IfThen {
+            get {
+                return ResourceManager.GetString("IfThen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to if x then y else z, if x else y finally z, if x do y else z.
+        /// </summary>
+        internal static string IfThenElse {
+            get {
+                return ResourceManager.GetString("IfThenElse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to last replacement.
+        /// </summary>
+        internal static string LastReplacement {
+            get {
+                return ResourceManager.GetString("LastReplacement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to lazy, lazy match, lazily, lazily match.
+        /// </summary>
+        internal static string Lazy {
+            get {
+                return ResourceManager.GetString("Lazy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to literal, literally.
+        /// </summary>
+        internal static string Literal {
+            get {
+                return ResourceManager.GetString("Literal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to look ahead, lookahead, search before match.
+        /// </summary>
+        internal static string Lookahead {
+            get {
+                return ResourceManager.GetString("Lookahead", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to look behind, lookbehind, search after match.
+        /// </summary>
+        internal static string Lookbehind {
+            get {
+                return ResourceManager.GetString("Lookbehind", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to negative look ahead, negative lookahead, neg lookahead, neg look ahead.
+        /// </summary>
+        internal static string NegLookahead {
+            get {
+                return ResourceManager.GetString("NegLookahead", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to negative look behind, negative lookbehind, neg lookbehind, neg look behind.
+        /// </summary>
+        internal static string NegLookbehind {
+            get {
+                return ResourceManager.GetString("NegLookbehind", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to new line, newline.
+        /// </summary>
+        internal static string NewLine {
+            get {
+                return ResourceManager.GetString("NewLine", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to non digit, non-digit, not digit.
+        /// </summary>
+        internal static string NonDigit {
+            get {
+                return ResourceManager.GetString("NonDigit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to non or range x, not x or y or z .
+        /// </summary>
+        internal static string NonOrRange {
+            get {
+                return ResourceManager.GetString("NonOrRange", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to non range x, nonrange x, not x .
+        /// </summary>
+        internal static string NonRange {
+            get {
+                return ResourceManager.GetString("NonRange", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to non-word, nonword, non word, not words, not word character, non word char.
+        /// </summary>
+        internal static string NonWord {
+            get {
+                return ResourceManager.GetString("NonWord", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to not space, nonspace.
+        /// </summary>
+        internal static string NotSpace {
+            get {
+                return ResourceManager.GetString("NotSpace", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to not word boundary, non-word boundary.
+        /// </summary>
+        internal static string NotWordBoundary {
+            get {
+                return ResourceManager.GetString("NotWordBoundary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to nth replacement, nth replace, replace nth, x replacement.
+        /// </summary>
+        internal static string NthReplacement {
+            get {
+                return ResourceManager.GetString("NthReplacement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to octalchar x, octal character x, octal char x.
+        /// </summary>
+        internal static string OctalChar {
+            get {
+                return ResourceManager.GetString("OctalChar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to octalstr x, octalstring x, octal string x.
+        /// </summary>
+        internal static string OctalStr {
+            get {
+                return ResourceManager.GetString("OctalStr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to onceonly, once only, match only once.
+        /// </summary>
+        internal static string OnceOnly {
+            get {
+                return ResourceManager.GetString("OnceOnly", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to or, x or y or z, any of the following x.
+        /// </summary>
+        internal static string OrBracket {
+            get {
+                return ResourceManager.GetString("OrBracket", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to or, x or y.
+        /// </summary>
+        internal static string OrRange {
+            get {
+                return ResourceManager.GetString("OrRange", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to passiverange, passive match, passive x.
+        /// </summary>
+        internal static string PassiveRange {
+            get {
+                return ResourceManager.GetString("PassiveRange", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to match any character, match any char, match any x.
+        /// </summary>
+        internal static string PeriodRange {
+            get {
+                return ResourceManager.GetString("PeriodRange", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to at least x to y, at least x and no more than y, match x to y, match x-y.
+        /// </summary>
+        internal static string RangeQuant {
+            get {
+                return ResourceManager.GetString("RangeQuant", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to return, returnchar, returncharacter, return character, return char.
+        /// </summary>
+        internal static string ReturnChar {
+            get {
+                return ResourceManager.GetString("ReturnChar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to second replacement, second replace, 2nd replace.
+        /// </summary>
+        internal static string SecondReplacement {
+            get {
+                return ResourceManager.GetString("SecondReplacement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to space, spacechar, spacecharacter, space char, space character.
+        /// </summary>
+        internal static string SpaceChar {
+            get {
+                return ResourceManager.GetString("SpaceChar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to begin string, string begin, strbegin, beginning of string.
+        /// </summary>
+        internal static string StringBegin {
+            get {
+                return ResourceManager.GetString("StringBegin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to end string, string end, strend, end of string.
+        /// </summary>
+        internal static string StringEnd {
+            get {
+                return ResourceManager.GetString("StringEnd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to subpattern num x, subpattern x, sub num x.
+        /// </summary>
+        internal static string SubpatternNum {
+            get {
+                return ResourceManager.GetString("SubpatternNum", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to subpattern range x, sub range x.
+        /// </summary>
+        internal static string SubPatternRange {
+            get {
+                return ResourceManager.GetString("SubPatternRange", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to tab, tabchar, tabcharacter, tab char, tab character.
+        /// </summary>
+        internal static string TabChar {
+            get {
+                return ResourceManager.GetString("TabChar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to verttab, vert tab, verttabchar, vertchar.
+        /// </summary>
+        internal static string VertTabChar {
+            get {
+                return ResourceManager.GetString("VertTabChar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to word x, wordchar x.
+        /// </summary>
+        internal static string WordChar {
+            get {
+                return ResourceManager.GetString("WordChar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to wordend, word end, end of word.
+        /// </summary>
+        internal static string WordEnd {
+            get {
+                return ResourceManager.GetString("WordEnd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to wordstart, word start, start of word.
+        /// </summary>
+        internal static string WordStart {
+            get {
+                return ResourceManager.GetString("WordStart", resourceCulture);
             }
         }
     }

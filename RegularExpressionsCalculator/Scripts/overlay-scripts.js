@@ -115,15 +115,6 @@ function setOverlayLinks(name) {
     });
 }
 
-// fills overlay keytitle element. will not fill element if children already exist.
-function setOverlayKeyTitle() {
-    var title = document.getElementById("overlay-keytitle");
-    if(title.childNodes.length == 0) {
-        var elem = document.createTextNode("Keywords:");
-        title.appendChild(elem);
-    }
-}
-
 // fills overlay keyword element after ajax call to calculator 
 // controller. will not fill element if children already exist.
 function setOverlayKeyWords(name) {
@@ -133,7 +124,7 @@ function setOverlayKeyWords(name) {
         data: { key: name },
         success: function (result) {
             var elem = document.getElementById('overlay-keywords');
-            if (links.childNodes.length == 0) {
+            if (links.childNodes.length == 1) {
                 var content = document.createTextNode(result.KeyWords);
                 elem.appendChild(content);
             }

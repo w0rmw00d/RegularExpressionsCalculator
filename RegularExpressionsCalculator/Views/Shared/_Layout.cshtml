@@ -53,35 +53,8 @@
     </div>
     <div>
         <nav class="navbar navbar-inverse navbar-left side-nav pull-left" id="side-nav">
-            @if (ViewBag.Title == "Calculator")
-            {
-                <div class="navbar-header"><a tabindex="" id="symbol-toggle" class="navbar-brand">Regex Symbols</a></div>
-                <ul class="nav">
-                    <li><a tabindex="" id="anchor-link" role="button">Anchors</a></li>
-                    <li><a tabindex="" id="assert-link" role="button">Assertions</a></li>
-                    <li><a tabindex="" id="char-link" role="button">Character Classes</a></li>
-                    <li><a tabindex="" id="esc-link" role="button">Escape Characters</a></li>
-                    <li><a tabindex="" id="group-link" role="button">Groups and Ranges</a></li>
-                    <li><a tabindex="" id="quant-link" role="button">Quantifiers</a></li>
-                    <li><a tabindex="" id="mod-link" role="button">Pattern Modifiers</a></li>
-                    <li><a tabindex="" id="special-link" role="button">Special Characters</a></li>
-                    <li><a tabindex="" id="replace-link" role="button">String Replacement</a></li>
-                </ul>
-            }
-            else if (ViewBag.Title == "Regular Engine")
-            {
-                <div class="navbar-header"><a tabindex="" id="engine-toggle" class="navbar-brand">Regular Engine</a></div>
-                <ul class="nav">
-                    <li><a tabindex="" role="button">Engine</a></li>
-                </ul>
-            }
-            else if (ViewBag.Title == "Regular Language")
-            {
-                <div class="navbar-header"><a tabindex="" id="language-toggle" class="navbar-brand">Regular Language</a></div>
-                <ul class="nav">
-                    <li><a tabindex="" role="button">Language</a></li>
-                </ul>
-            }
+            <div class="navbar-header"><a class="navbar-brand" id="nav-title"></a></div>
+            <ul class="nav" id="side-list"></ul>
         </nav>
     </div>
     @Html.Partial("_Overlays")

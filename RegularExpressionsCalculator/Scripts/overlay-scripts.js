@@ -6,7 +6,7 @@
 
 // opens overlay. called by side nav in layout.
 function openOverlay(name) {
-    fillOverlay(name);
+    fillInitialOverlay(name);
     document.getElementById('overlay').style.width = "25%";
 }
 
@@ -18,37 +18,63 @@ function closeOverlay() {
 
 // removes current overlay elements. called by fillOverlay and closeOverlay.
 function cleanOverlay() {
-    var overlayDef = document.getElementById("overlay-content");
-    var overlayTitle = document.getElementById("overlay-title");
-    var overlayLinks = document.getElementById("overlay-links");
-    var overlayKeyTitle = document.getElementById("overlay-keytitle");
-    var overlayKeyWords = document.getElementById("overlay-keywords");
+    cleanDef();
+    cleanKeyWords();
+    cleanLinks();
+    cleanTitle();
+}
 
-    while (overlayTitle.firstChild) {
-        overlayTitle.removeChild(overlayTitle.firstChild);
-    }
+// removes child elements from overlay-content.
+function cleanDef() {
+    var overlayDef = document.getElementById("overlay-content");
+
     while (overlayDef.firstChild) {
         overlayDef.removeChild(overlayDef.firstChild);
     }
-    while (overlayLinks.firstChild) {
-        overlayLinks.removeChild(overlayLinks.firstChild);
+}
+
+// removes child elements from overlay-links.
+function cleanLinks() {
+    var links = document.getElementById("overlay-links");
+
+    while (links.firstChild) {
+        links.removeChild(overlayLinks.firstChild);
     }
-    while (overlayKeyTitle.firstChild) {
-        overlayKeyTitle.removeChild(overlayKeyTitle.firstChild);
-    }
+    links.removeEventListener();
+}
+
+// removes child elements from overlay-keywords.
+function cleanKeyWords() {
+    var overlayKeyWords = document.getElementById("overlay-keywords");
+
     while (overlayKeyWords.firstChild) {
         overlayKeyWords.removeChild(overlayKeyWords.firstChild);
     }
 }
 
-// trivial caller for methods used to fill overlay elements. called by openOverlay.
-function fillOverlay(name) {
+// removes child elements from overlay-title.
+function cleanTitle() {
+    var title = document.getElementById("overlay-title");
+
+    while (title.firstChild) {
+        title.removeChild(title.firstChild);
+    }
+}
+
+// trivial caller for methods used to fill overlay elements on initial call. called by openOverlay.
+function fillInitialOverlay(name) {
     cleanOverlay();
     setOverlayTitle(name);
     setOverlayDef(name);
     setOverlayLinks(name);
-    setOverlayKeyTitle();
-    setOverylayKeyWords(name);
+}
+
+// trivial caller for methods used to fill overlay elements on secondary call. called by event listener on overlay-links.
+function fillSecondaryOverlay(name) {
+    cleanOverlay();
+    setOverlayTitle(name);
+    setOverlayDef(name);
+    setOverlayKeyWords(name);
 }
 
 // fills overlay title element after ajax call to calculator 
@@ -106,9 +132,7 @@ function setOverlayLinks(name) {
                     links.appendChild(item);
                 }
                 links.addEventListener("click", function (event) {
-                    cleanOverlay();
-                    setOverlayTitle(event.target.id);
-                    setOverlayDef(event.target.id);
+                    fillSecondaryOverlay(event.target.id);
                 });
             }
         }
@@ -124,9 +148,10 @@ function setOverlayKeyWords(name) {
         data: { key: name },
         success: function (result) {
             var elem = document.getElementById('overlay-keywords');
-            if (links.childNodes.length == 1) {
+            if (links.childNodes.length == 0) {
+                var title = document.createTextNode("Keywords: ");
                 var content = document.createTextNode(result.KeyWords);
-                elem.appendChild(content);
+                elem.appendChild(title + content);
             }
         }
     });

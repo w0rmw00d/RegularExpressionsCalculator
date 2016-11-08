@@ -131,6 +131,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="App_Data\SideLinks.Designer.cs">
+      <DependentUpon>SideLinks.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="App_Data\TextKeys.Designer.cs">
       <DependentUpon>TextKeys.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -233,6 +238,10 @@
     <EmbeddedResource Include="App_Data\RegexText.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RegexText.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_Data\SideLinks.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SideLinks.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="App_Data\TextKeys.resx">
       <Generator>ResXFileCodeGenerator</Generator>

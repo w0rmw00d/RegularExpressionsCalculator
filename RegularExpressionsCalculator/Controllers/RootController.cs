@@ -82,5 +82,27 @@ namespace RegularExpressionsCalculator.Controllers
             }
             return Json(new { keyWords = words });
         }
+
+        public JsonResult getSideLinks(string pageName)
+        {
+            var links = new List<string>();
+            var linkSet = App_Data.SideLinks.ResourceManager.GetResourceSet(CultureInfo.CurrentUICulture, true, true);
+
+            while (links.Count == 0)
+            {
+                foreach (DictionaryEntry entry in linkSet)
+                {
+                    if (entry.Key.ToString().Equals(pageName))
+                    {
+                        var split = entry.Value.ToString().Split(',');
+                        foreach(var item in split)
+                        {
+                            links.Add(item);
+                        }
+                    }
+                }
+            }
+            return Json(new { Links = links });
+        }
     }
 }

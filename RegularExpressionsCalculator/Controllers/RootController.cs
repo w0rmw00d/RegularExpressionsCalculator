@@ -19,27 +19,16 @@ namespace RegularExpressionsCalculator.Controllers
         }
 
         /// <summary>
-        /// gets title for overlay-title div in _Overlay. queries resource
-        /// file using key and returns resource for entry in title div.
-        /// </summary>
-        /// <param name="key"></param>
-        /// <returns></returns>
-        public JsonResult getOverlayTitle(string key)
-        {
-            var regexset = App_Data.RegexSymbols.ResourceManager.GetResourceSet(CultureInfo.CurrentUICulture, true, true);
-            return Json(new { Title = regexset.GetString(key) });
-        }
-
-        /// <summary>
         /// gets text for overlay-def div in _Overlay. queries resource
         /// file using key and returns text for entry in overlay-def div.
         /// </summary>
         /// <param name="key"></param>
         /// <returns></returns>
-        public JsonResult getOverlayDef(string key)
+        public JsonResult getOverlayContent(string key)
         {
-            var defset = App_Data.RegexDefinitions.ResourceManager.GetResourceSet(CultureInfo.CurrentUICulture, true, true);
-            return Json(new { Definition = defset.GetString(key) });
+            var defset = App_Data.OverlayContent.ResourceManager.GetResourceSet(CultureInfo.CurrentUICulture, true, true);
+            var split = defset.GetString(key).Split(';');
+            return Json(new { Title = split[0], Content = split[1] });
         }
 
         /// <summary>
@@ -48,10 +37,10 @@ namespace RegularExpressionsCalculator.Controllers
         /// </summary>
         /// <param name="key"></param>
         /// <returns></returns>
-        public JsonResult getOverlayLinks(string key)
+        public JsonResult getLinks(string key)
         {
             var list = new List<Tuple<string, string>>();
-            var linkset = App_Data.RegexLinks.ResourceManager.GetResourceSet(CultureInfo.CurrentUICulture, true, true);
+            var linkset = App_Data.MenuLinks.ResourceManager.GetResourceSet(CultureInfo.CurrentUICulture, true, true);
             var linkStr = linkset.GetString(key).Split(';');
 
             foreach (var link in linkStr)
@@ -69,10 +58,10 @@ namespace RegularExpressionsCalculator.Controllers
         /// </summary>
         /// <param name="key"></param>
         /// <returns></returns>
-        public JsonResult getOverlayKeyWords(string input)
+        public JsonResult getKeywords(string input)
         {
             var words = string.Empty;
-            var keySet = App_Data.TextKeys.ResourceManager.GetResourceSet(CultureInfo.CurrentUICulture, true, true);
+            var keySet = App_Data.Keywords.ResourceManager.GetResourceSet(CultureInfo.CurrentUICulture, true, true);
             while (string.IsNullOrEmpty(words))
             {
                 foreach (DictionaryEntry entry in keySet)
@@ -83,26 +72,5 @@ namespace RegularExpressionsCalculator.Controllers
             return Json(new { keyWords = words });
         }
 
-        public JsonResult getSideLinks(string pageName)
-        {
-            var links = new List<string>();
-            var linkSet = App_Data.SideLinks.ResourceManager.GetResourceSet(CultureInfo.CurrentUICulture, true, true);
-
-            while (links.Count == 0)
-            {
-                foreach (DictionaryEntry entry in linkSet)
-                {
-                    if (entry.Key.ToString().Equals(pageName))
-                    {
-                        var split = entry.Value.ToString().Split(',');
-                        foreach(var item in split)
-                        {
-                            links.Add(item);
-                        }
-                    }
-                }
-            }
-            return Json(new { Links = links });
-        }
     }
 }

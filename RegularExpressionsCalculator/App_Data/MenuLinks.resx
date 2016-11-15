@@ -117,13 +117,49 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Anchor" xml:space="preserve">
+    <value>CaretAnchor,^;StringBegin,\A;DollarAnchor,$;StringEnd,\Z;BoundaryAnchor,\b;NotWordBoundary,\B;WordStart,\&lt;;WordEnd,\&gt;</value>
+  </data>
+  <data name="Assert" xml:space="preserve">
+    <value>Lookahead,?=;NegLookahead,?!;Lookbehind, ?&lt;=;NegLookbehind, ?!= or ?&lt;!;OnceOnly, ?&gt;;IfThen, ?();IfThenElse, ?()|;Comment, ?#</value>
+  </data>
   <data name="Calculator" xml:space="preserve">
     <value>Anchors,Assertions,Character Classes,Escape Characters,Groups and Ranges,Quantifiers,Pattern Modifiers,Special Characters,String Replacement</value>
   </data>
-  <data name="Engine" xml:space="preserve">
+  <data name="Character" xml:space="preserve">
+    <value>ControlChar,\c;SpaceChar,\s;NotSpace,\S;DigitChar,\d;NonDigitChar,\D;WordChar,\w;NonWordChar,\W;HexaChar,\x;OctalChar,\O</value>
+  </data>
+  <data name="Escape" xml:space="preserve">
+    <value>Literal,\;BeginLiteral,\Q;EndLiteral,\E</value>
+  </data>
+  <data name="Group" xml:space="preserve">
+    <value>PeriodRange,.;OrRange,(a|b);GroupRange,(...);PassiveRange,(?:...);OrBracket,[abc];NonOrRange,[^abc];BracketRange,[a-e];DigitRange,[0-5];SubPatternRange,\y</value>
+  </data>
+  <data name="HelpCalc" xml:space="preserve">
+    <value>What do I do?,What happens if I enter something wrong?,Why isn't it doing anything?,Why a regular expressions calculator?,I need more help than this.</value>
+  </data>
+  <data name="HelpEngine" xml:space="preserve">
     <value />
   </data>
-  <data name="Language" xml:space="preserve">
+  <data name="HelpLang" xml:space="preserve">
     <value />
+  </data>
+  <data name="Mod" xml:space="preserve">
+    <value>GlobalPattern,\g</value>
+  </data>
+  <data name="Quant" xml:space="preserve">
+    <value>GreedyZero,*;GreedyOne,+;Lazy,?;Exact,{5};AtLeast,{5,};RangeQuant,{5,7}</value>
+  </data>
+  <data name="RegularEngine" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RegularLanguage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Replace" xml:space="preserve">
+    <value>NthReplacement,$n;SecondReplacement,$2;FirstReplacement,$1;BeforeReplacement,$`;AfterReplace,$';LastReplacement,$+;EntireReplacement,$&amp;</value>
+  </data>
+  <data name="Special" xml:space="preserve">
+    <value>NewLine,\n;ReturnChar,\r;TabChar,\t;VerTabChar,\v;FeedChar,\f;OctalStr,\xxx;HexStrChar,\xhh</value>
   </data>
 </root>

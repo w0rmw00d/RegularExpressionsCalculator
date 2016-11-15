@@ -116,43 +116,33 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Data\RegexSymbols.Designer.cs">
-      <DependentUpon>RegexSymbols.resx</DependentUpon>
+    <Compile Include="App_Data\RegexPlainText.Designer.cs">
+      <DependentUpon>RegexPlainText.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="App_Data\RegexLinks.Designer.cs">
-      <DependentUpon>RegexLinks.resx</DependentUpon>
+    <Compile Include="App_Data\MenuLinks.Designer.cs">
+      <DependentUpon>MenuLinks.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="App_Data\RegexText.Designer.cs">
-      <DependentUpon>RegexText.resx</DependentUpon>
+    <Compile Include="App_Data\Keywords.Designer.cs">
+      <DependentUpon>Keywords.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="App_Data\SideLinks.Designer.cs">
-      <DependentUpon>SideLinks.resx</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="App_Data\TextKeys.Designer.cs">
-      <DependentUpon>TextKeys.resx</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="App_Data\SampleText.Designer.cs">
-      <DependentUpon>SampleText.resx</DependentUpon>
+    <Compile Include="App_Data\SampleAnalysisText.Designer.cs">
+      <DependentUpon>SampleAnalysisText.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="App_Data\RegexDefinitions.Designer.cs">
+    <Compile Include="App_Data\OverlayContent.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>RegexDefinitions.resx</DependentUpon>
+      <DependentUpon>OverlayContent.resx</DependentUpon>
     </Compile>
     <Compile Include="Controllers\CalculatorController.cs" />
     <Compile Include="Controllers\RegularEngineController.cs" />
@@ -227,33 +217,25 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="App_Data\RegexSymbols.resx">
+    <EmbeddedResource Include="App_Data\RegexPlainText.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>RegexSymbols.Designer.cs</LastGenOutput>
+      <LastGenOutput>RegexPlainText.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="App_Data\RegexLinks.resx">
+    <EmbeddedResource Include="App_Data\MenuLinks.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>RegexLinks.Designer.cs</LastGenOutput>
+      <LastGenOutput>MenuLinks.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="App_Data\RegexText.resx">
+    <EmbeddedResource Include="App_Data\Keywords.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>RegexText.Designer.cs</LastGenOutput>
+      <LastGenOutput>Keywords.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="App_Data\SideLinks.resx">
+    <EmbeddedResource Include="App_Data\SampleAnalysisText.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>SideLinks.Designer.cs</LastGenOutput>
+      <LastGenOutput>SampleAnalysisText.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="App_Data\TextKeys.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>TextKeys.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="App_Data\SampleText.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>SampleText.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="App_Data\RegexDefinitions.resx">
+    <EmbeddedResource Include="App_Data\OverlayContent.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>RegexDefinitions.Designer.cs</LastGenOutput>
+      <LastGenOutput>OverlayContent.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -22,14 +22,14 @@ namespace RegularExpressionsCalculator.App_Data {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class RegexSymbols {
+    internal class RegexPlainText {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal RegexSymbols() {
+        internal RegexPlainText() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace RegularExpressionsCalculator.App_Data {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("RegularExpressionsCalculator.App_Data.RegexSymbols", typeof(RegexSymbols).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("RegularExpressionsCalculator.App_Data.RegexPlainText", typeof(RegexPlainText).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,7 +61,7 @@ namespace RegularExpressionsCalculator.App_Data {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to $&apos; or \&apos;.
+        ///   Looks up a localized string similar to after replacement.
         /// </summary>
         internal static string AfterReplace {
             get {
@@ -70,25 +70,7 @@ namespace RegularExpressionsCalculator.App_Data {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Anchors.
-        /// </summary>
-        internal static string Anchor {
-            get {
-                return ResourceManager.GetString("Anchor", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Assertions.
-        /// </summary>
-        internal static string Assert {
-            get {
-                return ResourceManager.GetString("Assert", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {5, }.
+        ///   Looks up a localized string similar to match at least x times.
         /// </summary>
         internal static string AtLeast {
             get {
@@ -97,7 +79,7 @@ namespace RegularExpressionsCalculator.App_Data {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to $` or \`.
+        ///   Looks up a localized string similar to before replacement.
         /// </summary>
         internal static string BeforeReplace {
             get {
@@ -106,7 +88,7 @@ namespace RegularExpressionsCalculator.App_Data {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to \Q.
+        ///   Looks up a localized string similar to begin literal interpretation.
         /// </summary>
         internal static string BeginLiteral {
             get {
@@ -115,7 +97,7 @@ namespace RegularExpressionsCalculator.App_Data {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to \b.
+        ///   Looks up a localized string similar to at word boundary.
         /// </summary>
         internal static string BoundaryAnchor {
             get {
@@ -124,7 +106,7 @@ namespace RegularExpressionsCalculator.App_Data {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [abc].
+        ///   Looks up a localized string similar to any of the following: x.
         /// </summary>
         internal static string BracketRange {
             get {
@@ -133,7 +115,7 @@ namespace RegularExpressionsCalculator.App_Data {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ^.
+        ///   Looks up a localized string similar to at the start of the string or line.
         /// </summary>
         internal static string CaretAnchor {
             get {
@@ -142,25 +124,7 @@ namespace RegularExpressionsCalculator.App_Data {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Character Classes.
-        /// </summary>
-        internal static string Character {
-            get {
-                return ResourceManager.GetString("Character", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to ?#.
-        /// </summary>
-        internal static string Comment {
-            get {
-                return ResourceManager.GetString("Comment", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to \c.
+        ///   Looks up a localized string similar to control character.
         /// </summary>
         internal static string ControlChar {
             get {
@@ -169,7 +133,7 @@ namespace RegularExpressionsCalculator.App_Data {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to \d.
+        ///   Looks up a localized string similar to digit characters.
         /// </summary>
         internal static string DigitChar {
             get {
@@ -178,7 +142,7 @@ namespace RegularExpressionsCalculator.App_Data {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [0-6].
+        ///   Looks up a localized string similar to anything in the following inclusive range: 1-4.
         /// </summary>
         internal static string DigitRange {
             get {
@@ -187,7 +151,7 @@ namespace RegularExpressionsCalculator.App_Data {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to $.
+        ///   Looks up a localized string similar to end of string or line.
         /// </summary>
         internal static string DollarAnchor {
             get {
@@ -196,7 +160,7 @@ namespace RegularExpressionsCalculator.App_Data {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to \E.
+        ///   Looks up a localized string similar to end literal interpretation.
         /// </summary>
         internal static string EndLiteral {
             get {
@@ -205,7 +169,7 @@ namespace RegularExpressionsCalculator.App_Data {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to $&amp; or \&amp;.
+        ///   Looks up a localized string similar to entire matched string.
         /// </summary>
         internal static string EntireReplacement {
             get {
@@ -214,16 +178,7 @@ namespace RegularExpressionsCalculator.App_Data {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Escape Characters.
-        /// </summary>
-        internal static string Escape {
-            get {
-                return ResourceManager.GetString("Escape", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {5}.
+        ///   Looks up a localized string similar to match exactly x times.
         /// </summary>
         internal static string Exact {
             get {
@@ -232,7 +187,7 @@ namespace RegularExpressionsCalculator.App_Data {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to \f.
+        ///   Looks up a localized string similar to form feed character.
         /// </summary>
         internal static string FeedChar {
             get {
@@ -241,7 +196,7 @@ namespace RegularExpressionsCalculator.App_Data {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to $1 or \1.
+        ///   Looks up a localized string similar to first replaced match.
         /// </summary>
         internal static string FirstReplacement {
             get {
@@ -250,7 +205,7 @@ namespace RegularExpressionsCalculator.App_Data {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to \g.
+        ///   Looks up a localized string similar to search globally.
         /// </summary>
         internal static string GlobalPattern {
             get {
@@ -259,7 +214,7 @@ namespace RegularExpressionsCalculator.App_Data {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to +.
+        ///   Looks up a localized string similar to at least once.
         /// </summary>
         internal static string GreedyOne {
             get {
@@ -268,7 +223,7 @@ namespace RegularExpressionsCalculator.App_Data {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to *.
+        ///   Looks up a localized string similar to at least zero times.
         /// </summary>
         internal static string GreedyZero {
             get {
@@ -277,16 +232,7 @@ namespace RegularExpressionsCalculator.App_Data {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Groups and Ranges.
-        /// </summary>
-        internal static string Group {
-            get {
-                return ResourceManager.GetString("Group", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to (...).
+        ///   Looks up a localized string similar to any of the following group: x.
         /// </summary>
         internal static string GroupRange {
             get {
@@ -295,7 +241,7 @@ namespace RegularExpressionsCalculator.App_Data {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to \xhh.
+        ///   Looks up a localized string similar to hexadecimal value x.
         /// </summary>
         internal static string HexStrChar {
             get {
@@ -304,7 +250,7 @@ namespace RegularExpressionsCalculator.App_Data {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ?().
+        ///   Looks up a localized string similar to if x then y.
         /// </summary>
         internal static string IfThen {
             get {
@@ -313,7 +259,7 @@ namespace RegularExpressionsCalculator.App_Data {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ?()|.
+        ///   Looks up a localized string similar to if x then y finally z.
         /// </summary>
         internal static string IfThenElse {
             get {
@@ -322,7 +268,7 @@ namespace RegularExpressionsCalculator.App_Data {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to $+ or \+.
+        ///   Looks up a localized string similar to last replaced match.
         /// </summary>
         internal static string LastReplacement {
             get {
@@ -331,7 +277,7 @@ namespace RegularExpressionsCalculator.App_Data {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ?.
+        ///   Looks up a localized string similar to lazy.
         /// </summary>
         internal static string Lazy {
             get {
@@ -340,7 +286,7 @@ namespace RegularExpressionsCalculator.App_Data {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to \.
+        ///   Looks up a localized string similar to interpret x literally.
         /// </summary>
         internal static string Literal {
             get {
@@ -349,7 +295,7 @@ namespace RegularExpressionsCalculator.App_Data {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ?=.
+        ///   Looks up a localized string similar to match x and return match and index at which match starts.
         /// </summary>
         internal static string Lookahead {
             get {
@@ -358,20 +304,11 @@ namespace RegularExpressionsCalculator.App_Data {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ?&lt;=.
+        ///   Looks up a localized string similar to match x and return match and index at which match ends.
         /// </summary>
         internal static string Lookbehind {
             get {
                 return ResourceManager.GetString("Lookbehind", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Pattern Modifiers.
-        /// </summary>
-        internal static string Mod {
-            get {
-                return ResourceManager.GetString("Mod", resourceCulture);
             }
         }
         

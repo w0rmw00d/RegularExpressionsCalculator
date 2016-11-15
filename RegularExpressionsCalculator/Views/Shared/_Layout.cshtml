@@ -25,16 +25,11 @@
                 </li>
                 <li class="dropdown">
                     <a tabindex="" class="dropdown-toggle" role="button" data-toggle="dropdown">Help</a>
-                    <ul class="dropdown-menu">
-                        <li><a tabindex="" class="btn btn-secondary" role="button" data-toggle="popover" data-trigger="focus" data-placement="right" data-content="Enter any regular expression you wish to test in the input box and press the run button to see what patterns it matches in the text box." data-animation="true">What do I do?</a></li>
-                        <li><a tabindex="" class="btn btn-secondary" role="button" data-toggle="popover" data-trigger="focus" data-placement="right" data-content="If you enter a pattern that won't resolve, a popup will tell you what's wrong.">What happens if I enter something wrong?</a></li>
-                        <li><a tabindex="" class="btn btn-secondary" role="button" data-toggle="popover" data-trigger="focus" data-placement="right" data-content="If there's an error in your pattern, a popup should appear that tells you what's wrong. If this does not occur, please contact me.">Why isn't it doing anything?</a></li>
-                        <li><a tabindex="" class="btn btn-secondary" role="button" data-toggle="popover" data-trigger="focus" data-placement="right" data-content="Regular expressions are a necessary part of understanding how to parse text efficiently, but they can be very difficult to understand. This calculator can help you learn them.">Why a regular expressions calculator?</a></li>
-                        <li><a tabindex="" class="btn btn-secondary" role="button" data-toggle="popover" data-trigger="focus" data-placement="right" data-content="Toggle the option 'Parse Plain Text' in the calculator side menu. NOTE: This feature is in alpha and may not work.">No really, help me.</a></li>
+                    <ul class="dropdown-menu" id="help-menu">
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a tabindex="" class="dropdown-toggle" data-toggle="dropdown">Other Regex Resources</a>
+                    <a tabindex="" class="dropdown-toggle" data-toggle="dropdown">Regex Resources</a>
                     <ul class="dropdown-menu">
                         <li><a tabindex="" id="cheat-link" class="btn btn-secondary" role="button">Cheatography</a></li>
                         <li><a tabindex="" id="info-link" class="btn btn-secondary" role="button">Regular-Expressions.Info</a></li>
@@ -44,6 +39,7 @@
                 <li class="dropdown">
                     <a tabindex="" class="dropdown-toggle" data-toggle="dropdown">About me</a>
                     <ul class="dropdown-menu">
+                        <li><a tabindex="" id="about-link" class="btn btn-secondary" role="button">About Me</a></li>
                         <li><a tabindex="" id="mail-link" class="btn btn-secondary" role="button">Email Me</a></li>
                         <li><a tabindex="" id="git-link" class="btn btn-secondary" role="button">Github</a></li>
                     </ul>

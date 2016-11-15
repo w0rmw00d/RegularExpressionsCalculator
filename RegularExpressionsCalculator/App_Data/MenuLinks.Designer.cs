@@ -22,14 +22,14 @@ namespace RegularExpressionsCalculator.App_Data {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class RegexLinks {
+    internal class MenuLinks {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal RegexLinks() {
+        internal MenuLinks() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace RegularExpressionsCalculator.App_Data {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("RegularExpressionsCalculator.App_Data.RegexLinks", typeof(RegexLinks).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("RegularExpressionsCalculator.App_Data.MenuLinks", typeof(MenuLinks).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -79,6 +79,15 @@ namespace RegularExpressionsCalculator.App_Data {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Anchors,Assertions,Character Classes,Escape Characters,Groups and Ranges,Quantifiers,Pattern Modifiers,Special Characters,String Replacement.
+        /// </summary>
+        internal static string Calculator {
+            get {
+                return ResourceManager.GetString("Calculator", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ControlChar,\c;SpaceChar,\s;NotSpace,\S;DigitChar,\d;NonDigitChar,\D;WordChar,\w;NonWordChar,\W;HexaChar,\x;OctalChar,\O.
         /// </summary>
         internal static string Character {
@@ -106,6 +115,33 @@ namespace RegularExpressionsCalculator.App_Data {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to What do I do?,What happens if I enter something wrong?,Why isn&apos;t it doing anything?,Why a regular expressions calculator?,I need more help than this..
+        /// </summary>
+        internal static string HelpCalc {
+            get {
+                return ResourceManager.GetString("HelpCalc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string HelpEngine {
+            get {
+                return ResourceManager.GetString("HelpEngine", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string HelpLang {
+            get {
+                return ResourceManager.GetString("HelpLang", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to GlobalPattern,\g.
         /// </summary>
         internal static string Mod {
@@ -120,6 +156,24 @@ namespace RegularExpressionsCalculator.App_Data {
         internal static string Quant {
             get {
                 return ResourceManager.GetString("Quant", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string RegularEngine {
+            get {
+                return ResourceManager.GetString("RegularEngine", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string RegularLanguage {
+            get {
+                return ResourceManager.GetString("RegularLanguage", resourceCulture);
             }
         }
         

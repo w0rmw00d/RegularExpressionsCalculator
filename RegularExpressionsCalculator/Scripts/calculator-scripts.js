@@ -6,69 +6,75 @@
  * text, displays error messages, and ajax calls.
  * NOTE: calculation done client-side where possible.
  ************************************************/
+// SECTION: FLAGS
 // flag for type of parse applied to user expression. false = regex parse. true = plain text parse.
 var parse = false;
 
-// SECTION: ACTION LISTENERS
-// attaches action listener to user-exp. calls interpret method based on current value of flag.
-$('#user-exp').on('input', function () {
+// SECTION: EVENT LISTENERS
+// event listener for user-exp. calls interpret method based on current value of flag.
+$('#user-input').on('input', function () {
     if (!parse) interpretRegEx();
     else interpretPlainText();
 });
 
-// attaches action listener to calc. calls parse methods based on current value of flag and prevents default form submission.
-$('#calc').on('click', function (event) {
+// event listener for calc-button. calls parseInput and prevents default form submission.
+$('#calculate-button').on('click', function (event) {
     event.preventDefault();
-    if (!parse) parseRegEx();
-    else if (parse) parseText();
+    parseInput();
 });
 
-// attaches action listener to parse-toggle. calls parseToggle and prevents default form submission.
+// event listener for parse-toggle. calls parseToggle and prevents default form submission.
 $('#parse-toggle').on('click', function (event) {
     event.preventDefault();
     parseToggle();
 });
 
 // SECTION: METHODS
-// toggles type of parse applied to user expressions. changes label text for user input, 
-// toggles flag value, changes label text and read only value for interpretation field.
+// changes label text for user input and translated input, toggles 
+// flag (parse) value. called by event listener for parse-toggle.
 function parseToggle() {
+    var inputLabel = document.getElementById("input-label");
+    var transLabel = document.getElementById("translated-label");
+    
     if (!parse) {
-        $('#exp-label').text("Enter your plain text:");
-        $('#text-label').text("Regex Expression:");
-        document.getElementById("exp-text").readOnly = false;
+        inputLabel.textContent = "Enter your plain text:";
+        transLabel.textContent = "Regex Expression:";
         parse = true;
     }
     else {
-        $('#exp-label').text("Enter your expression:");
-        $('#text-label').text("What it means:");
-        document.getElementById("exp-text").readOnly = true;
+        inputLabel.textContent = "Enter your expression:";
+        transLabel.textContent = "What it means:";
         parse = false;
     }
 }
 
-// attempts to parse regex expression. calls parseExp on user-entered expression, creates 
-// highlight if matches found, or calls displayErrorMessage if error present. 
+// attempts to parse regex expression. calls parseExp on input or translation 
+// based on value of flag (parse), adds highlight if matches found, and/or
+// calls displayErrorMessage. called by event listener for calculate-button.
+// NOTE: if flags are present in the user-entered expression and have
+// not been parsed out, running the engine will cause an infinite loop.
 function parseInput() {
-    var testElem = document.getElementById("text-analyze").textContent;
-    var engine, matchArray, parsedExp;
-    // assigning parsedExp to parsed value of user-exp or exp-text based on flag value
-    if (!parse) parsedExp = parseExp(document.getElementById("user-exp").textContent);
-    else parsedExp = parseExp(document.getElementById("exp-text").textContent);
-    // assigning engine based on presence of flags in parsedExp
-    if (parsedExp.flags) engine = new RegExp(parsedExp.exp, parsedExp.flags);
-    else engine = new RegExp(parsedExp.exp);
-
+    var sample = document.getElementById("sample-text").textContent;
+    var engine, matches, parsed, input;
+    // assigning input based on value of flag
+    if (!parse) input = document.getElementById("translated-input").textContent;
+    else input = document.getElementById("user-input").textContent;
+    // assigning parsed to parsed value of user-input
+    parsed = parseFlags(input);
+    // assigning engine to instantiation of regex engine based on presence of flags in parsed
+    if (parsed.flags.length > 0) engine = new RegExp(parsed.exp, parsed.flags);
+    else engine = new RegExp(parsed.exp);
+    // attempt to execute engine on sample analysis text
     try {
-        // if the global flag is not enabled, this method will cause an infinite loop
-        if (parsedExp.flags.includes('g')) {
-            while((matchArray = engine.exec(testElem)) !== null) {
-                testElem = testElem.replace(matchArray[0], "<span class='highlight'>" + matchArray[0] + "</span>");
+        // if global flag exists, run engine until all matches are found
+        if (parsed.flags.includes('g')) {
+            while((matches = engine.exec(testElem)) !== null) {
+                sample = sample.replace(matches[0], "<span class='highlight'>" + matches[0] + "</span>");
             }
         }
         else {
-            var match = engine.exec(testElem);
-            testElem = testElem.replace(matchArray[0], "<span class='highlight'>" + matchArray[0] + "</span>");
+            var match = engine.exec(sampleTxt);
+            sampleTxt = sample.replace(matches[0], "<span class='highlight'>" + matches[0] + "</span>");
         }
     }
     catch (error) {
@@ -81,11 +87,10 @@ function displayError() {
     alert("Write me a better error method, ya lazy code monkey.");
 }
 
-// parses out flags from regex expression, if any, and returns array containing expression and flags.
-function parseExp(expression) {
-    var parse = expression.split('/g', '/i', '/m', '/y');
-    var exp;
-    var flags = [];
+// parses out flags from input and returns array containing expression and flags.
+function parseFlags(input) {
+    var parse = input.split('/g', '/i', '/m', '/y');
+    var exp, flags;
     for (var a = 0; a < parse.length; a++) {
         if (parse[a] != '/g' || parse[a] != '/i' || parse[a] != '/m' || parse[a] != '/y') {
             exp += parse[a];
@@ -97,9 +102,10 @@ function parseExp(expression) {
     return { "exp" : exp, "flags" : flags };
 }
 
-// interprets regex as plain text via ajax call. called by action listener on user-exp. fills exp-text based on value of user-exp.
+// interprets regex as plain text via ajax call to CalculatorController. called by
+// event listener on user-input. fills translated-input based on value of user-input.
 function interpretRegEx() {
-    var userStr = document.getElementById("user-exp");
+    var userStr = document.getElementById("user-input");
     $.ajax({
         method: 'POST',
         url: '@Url.Action("interpretRegEx", "Calculator")',

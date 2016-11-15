@@ -9,13 +9,13 @@ namespace RegularExpressionsCalculator.Controllers
     public class RootController : Controller
     {
         /// <summary>
-        /// gets a random int in the ASCII character range.
+        /// gets a random int in the ASCII character range for capital letters.
         /// </summary>
         /// <returns></returns>
         public int getCharRand()
         {
             Random random = new Random();
-            return random.Next(65, 90);
+            return random.Next(64, 91);
         }
 
         /// <summary>

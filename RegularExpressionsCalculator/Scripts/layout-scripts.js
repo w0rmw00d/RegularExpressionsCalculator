@@ -2,12 +2,13 @@
  * Scripts for the layout page and shared functions. Functionality includes
  * navigation, email, script utilities, and toggled visibility for side nav. 
  ***************************************************************************/
-
+// SECTION: PAGE LOAD
 // called on page load. populates side nav and help menu in top nav depending on page title.
 $().ready(function () {
     fillSideNav($("title").text());
 });
 
+// SECTION: EVENT LISTENERS
 // event listener for logo. toggles side nav visibility via toggleSideNav.
 $('logo').click(null, function () {
     toggleSideNav();
@@ -59,6 +60,7 @@ $('about-link').click(null, function () {
     toggleOverlay("AboutMe", "help");
 });
 
+// SECTION: FUNCTIONS
 // toggles visibility of side nav via class. called by event listener for logo in top nav.
 function toggleSideNav() {
     var nav = document.getElementById("side-nav");

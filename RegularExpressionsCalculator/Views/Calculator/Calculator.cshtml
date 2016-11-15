@@ -1,31 +1,31 @@
 ﻿@{
     ViewBag.Title = "Calculator";
 }
-@* NOTE: Content in text-analyze has been parsed to add html in calculator controller. *@
+@* NOTE: Contents of sample-text are in raw html to allow highlighting via Site.css *@
 <div>
     <div style="float:left;">
         <dl class="dl-horizontal">
             <dt>
-                <label for="user-exp" id="exp-label">Enter your expression:</label>
+                <label for="user-input" id="input-label">Enter your expression:</label>
             </dt>
             <dd>
-                <input tabindex="" class="form-control" id="user-exp" />
+                <input tabindex="" class="form-control" id="user-input" />
             </dd>
             <dt>
-                <label for="exp-text" id="text-label">What it means:</label>
+                <label for="translated-input" id="translated-label">What it means:</label>
             </dt>
             <dd>
-                <textarea tabindex="" id="exp-text" rows="4" cols="80" readonly="readonly"></textarea>
+                <textarea tabindex="" id="translated-input" rows="4" cols="80" readonly="readonly"></textarea>
             </dd>
             <dt>
-                <label for="text-analyze">Text to be analyzed:</label>
+                <label for="sample-text">Text to be analyzed:</label>
             </dt>
             <dd>
-                <div tabindex="" class="text-div" id="text-analyze">@Html.Raw(@ViewBag.SampleText)</div>
+                <div tabindex="" class="text-div" id="sample-text">@Html.Raw(@ViewBag.SampleText)</div>
             </dd>
         </dl>
         <div class="pull-right" style="margin: 10px;">
-            <a id="calc" style="margin: 0 20px 0 0;">Calculate</a>
+            <a id="calculate-button" style="margin: 0 20px 0 0;">Calculate</a>
             <a id="parse-toggle" data-toggle="popover" data-trigger="focus" title="NOTE" data-content="Feature currently in alpha.">Plain Text</a>
         </div>
     </div>

@@ -333,4 +333,7 @@
   <data name="NotWordBoundary" xml:space="preserve">
     <value>\B; Non-Word Boundary: This pattern represents any character that is not a word boundary.</value>
   </data>
+  <data name="ExactRangeQuant" xml:space="preserve">
+    <value>{5};Exact Range: These symbols represent an exact number of times the pattern is to be matched.</value>
+  </data>
 </root>

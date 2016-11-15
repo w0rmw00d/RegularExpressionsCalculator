@@ -116,6 +116,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Data\ErrorMessages.Designer.cs">
+      <DependentUpon>ErrorMessages.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="App_Data\RegexPlainText.Designer.cs">
       <DependentUpon>RegexPlainText.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -217,6 +222,10 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="App_Data\ErrorMessages.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ErrorMessages.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="App_Data\RegexPlainText.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RegexPlainText.Designer.cs</LastGenOutput>

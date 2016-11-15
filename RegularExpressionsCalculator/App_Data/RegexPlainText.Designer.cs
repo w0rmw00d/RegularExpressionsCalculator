@@ -142,7 +142,7 @@ namespace RegularExpressionsCalculator.App_Data {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to anything in the following inclusive range: 1-4.
+        ///   Looks up a localized string similar to anything in the following inclusive range:.
         /// </summary>
         internal static string DigitRange {
             get {
@@ -466,15 +466,6 @@ namespace RegularExpressionsCalculator.App_Data {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Quantifiers.
-        /// </summary>
-        internal static string Quant {
-            get {
-                return ResourceManager.GetString("Quant", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to {5,7}.
         /// </summary>
         internal static string RangeQuant {
@@ -484,11 +475,11 @@ namespace RegularExpressionsCalculator.App_Data {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to String Replacement.
+        ///   Looks up a localized string similar to {x,}.
         /// </summary>
-        internal static string Replace {
+        internal static string RangeQuantMore {
             get {
-                return ResourceManager.GetString("Replace", resourceCulture);
+                return ResourceManager.GetString("RangeQuantMore", resourceCulture);
             }
         }
         
@@ -520,15 +511,6 @@ namespace RegularExpressionsCalculator.App_Data {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Special Characters.
-        /// </summary>
-        internal static string Special {
-            get {
-                return ResourceManager.GetString("Special", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to \A.
         /// </summary>
         internal static string StringBegin {
@@ -549,18 +531,9 @@ namespace RegularExpressionsCalculator.App_Data {
         /// <summary>
         ///   Looks up a localized string similar to \x.
         /// </summary>
-        internal static string SubpatternNum {
+        internal static string Subpattern {
             get {
-                return ResourceManager.GetString("SubpatternNum", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to \y.
-        /// </summary>
-        internal static string SubPatternRange {
-            get {
-                return ResourceManager.GetString("SubPatternRange", resourceCulture);
+                return ResourceManager.GetString("Subpattern", resourceCulture);
             }
         }
         

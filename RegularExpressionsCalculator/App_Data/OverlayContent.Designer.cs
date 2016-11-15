@@ -277,6 +277,15 @@ namespace RegularExpressionsCalculator.App_Data {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to {5};Exact Range: These symbols represent an exact number of times the pattern is to be matched..
+        /// </summary>
+        public static string ExactRangeQuant {
+            get {
+                return ResourceManager.GetString("ExactRangeQuant", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to \f;Form Feed: This pattern represents the form feed, or page break character..
         /// </summary>
         public static string FeedChar {

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Web.Mvc;
+using System.Resources;
 using System.Collections;
 using System.Globalization;
 using System.Collections.Generic;
@@ -9,41 +10,59 @@ namespace RegularExpressionsCalculator.Controllers
     public class RootController : Controller
     {
         /// <summary>
-        /// gets a random int in the ASCII character range for capital letters.
+        /// gets a random int in the ASCII character range for capital letters. used by CalculatorController.
         /// </summary>
         /// <returns></returns>
-        public int getCharRand()
+        public int getRandCharUpper()
         {
-            Random random = new Random();
-            return random.Next(64, 91);
+            return new Random().Next(64, 91);
+        }
+
+        /// <summary>
+        /// gets a resource set from one of the resource files. used by all controllers.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        public ResourceSet getResources(string name)
+        {
+            ResourceSet resource;
+            if (name == "error") resource = App_Data.OverlayContent.ResourceManager.GetResourceSet(CultureInfo.CurrentUICulture, true, true);
+            else if (name == "keywords") resource = App_Data.SampleAnalysisText.ResourceManager.GetResourceSet(CultureInfo.CurrentUICulture, true, true);
+            else if (name == "overlay") resource = App_Data.SampleAnalysisText.ResourceManager.GetResourceSet(CultureInfo.CurrentUICulture, true, true);
+            else if (name == "links") resource = App_Data.SampleAnalysisText.ResourceManager.GetResourceSet(CultureInfo.CurrentUICulture, true, true);
+            else if (name == "plaintext") resource = App_Data.SampleAnalysisText.ResourceManager.GetResourceSet(CultureInfo.CurrentUICulture, true, true);
+            else resource = App_Data.SampleAnalysisText.ResourceManager.GetResourceSet(CultureInfo.CurrentUICulture, true, true);
+
+            return resource;
         }
 
         /// <summary>
         /// gets text for overlay-def div in _Overlay. queries resource
         /// file using key and returns text for entry in overlay-def div.
+        /// the overlay is used by all three views.
         /// </summary>
         /// <param name="key"></param>
         /// <returns></returns>
         public JsonResult getOverlayContent(string key)
         {
-            var defset = App_Data.OverlayContent.ResourceManager.GetResourceSet(CultureInfo.CurrentUICulture, true, true);
-            var split = defset.GetString(key).Split(';');
+            ResourceSet set = getResources("overlay");
+            var split = set.GetString(key).Split(';');
             return Json(new { Title = split[0], Content = split[1] });
         }
 
         /// <summary>
-        /// gets link text for overlay-link div in _Overlay. queries resource
-        /// file using key and returns list for entry in title div.
+        /// gets link text for overlay-link div in _Overlay. queries resource file using a key
+        /// and returns list for entry in title div. the overlay is used by all three views.
         /// </summary>
         /// <param name="key"></param>
         /// <returns></returns>
-        public JsonResult getLinks(string key)
+        public JsonResult getOverlayLinks(string key)
         {
             var list = new List<Tuple<string, string>>();
-            var linkset = App_Data.MenuLinks.ResourceManager.GetResourceSet(CultureInfo.CurrentUICulture, true, true);
-            var linkStr = linkset.GetString(key).Split(';');
+            var set = getResources("links");
+            var links = set.GetString(key).Split(';');
 
-            foreach (var link in linkStr)
+            foreach (var link in links)
             {
                 var split = link.Split(',');
                 list.Add(Tuple.Create(split[0], split[1]));
@@ -53,24 +72,23 @@ namespace RegularExpressionsCalculator.Controllers
         }
 
         /// <summary>
-        /// gets key words for overlay-keywords div in _Overlay. queries resource
-        /// file using key and returns text for entry in keywords div.
+        /// gets key words for overlay-keywords div in _Overlay. queries resource file using a
+        /// key and returns text for entry in keywords div. the overlay is used by all three views.
         /// </summary>
         /// <param name="key"></param>
         /// <returns></returns>
-        public JsonResult getKeywords(string input)
+        public JsonResult getOverlayKeywords(string input)
         {
             var words = string.Empty;
-            var keySet = App_Data.Keywords.ResourceManager.GetResourceSet(CultureInfo.CurrentUICulture, true, true);
+            var set = getResources("keywords");
             while (string.IsNullOrEmpty(words))
             {
-                foreach (DictionaryEntry entry in keySet)
+                foreach (DictionaryEntry entry in set)
                 {
                     if (entry.Key.ToString().Equals(input)) words = entry.Value.ToString();
                 }
             }
             return Json(new { keyWords = words });
         }
-
     }
 }

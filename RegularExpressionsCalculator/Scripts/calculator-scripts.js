@@ -78,13 +78,13 @@ function parseInput() {
         }
     }
     catch (error) {
-        displayError();
+        displayError(error);
     }
 }
 
 // displays error message if user-entered expression is unable to be parsed. called by parseRegEx and parseText.
-function displayError() {
-    alert("Write me a better error method, ya lazy code monkey.");
+function displayError(error) {
+    alert("Write me a better error method, ya lazy code monkey. " + error);
 }
 
 // parses out flags from input and returns array containing expression and flags.

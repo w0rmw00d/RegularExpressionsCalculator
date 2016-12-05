@@ -142,7 +142,7 @@ namespace RegularExpressionsCalculator.App_Data {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to anything in the following inclusive range:.
+        ///   Looks up a localized string similar to anything in the following inclusive range: x.
         /// </summary>
         internal static string DigitRange {
             get {
@@ -250,7 +250,7 @@ namespace RegularExpressionsCalculator.App_Data {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to if x then y.
+        ///   Looks up a localized string similar to if x then x.
         /// </summary>
         internal static string IfThen {
             get {
@@ -259,7 +259,7 @@ namespace RegularExpressionsCalculator.App_Data {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to if x then y finally z.
+        ///   Looks up a localized string similar to if x then x finally x.
         /// </summary>
         internal static string IfThenElse {
             get {

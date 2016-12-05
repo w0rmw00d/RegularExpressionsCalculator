@@ -145,7 +145,7 @@
     <value>digit characters</value>
   </data>
   <data name="DigitRange" xml:space="preserve">
-    <value>anything in the following inclusive range:</value>
+    <value>anything in the following inclusive range: x</value>
   </data>
   <data name="DollarAnchor" xml:space="preserve">
     <value>end of string or line</value>
@@ -181,10 +181,10 @@
     <value>hexadecimal value x</value>
   </data>
   <data name="IfThen" xml:space="preserve">
-    <value>if x then y</value>
+    <value>if x then x</value>
   </data>
   <data name="IfThenElse" xml:space="preserve">
-    <value>if x then y finally z</value>
+    <value>if x then x finally x</value>
   </data>
   <data name="LastReplacement" xml:space="preserve">
     <value>last replaced match</value>

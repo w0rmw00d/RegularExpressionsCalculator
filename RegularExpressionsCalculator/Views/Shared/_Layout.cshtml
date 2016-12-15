@@ -1,17 +1,23 @@
 ﻿<!DOCTYPE html>
 <html lang="en-us">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="regex,regular expressions,regex calculator,regular expressions calculator,regex help,regex cheatsheet,regex javascript, regex js, learning regex, regex tutorials, what is regex" />
-    <meta name="description" content="A learning calculator for regular expressions, designed for students and beginners." />
-    @Styles.Render("~/Content/css")
-</head>
-<body>
-    <div>
-        <nav class="navbar navbar-dark navbar-inverse navbar-fixed-top">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="keywords" content="regex,regular expressions,regex calculator,regular expressions calculator,regex help,regex cheatsheet,regex javascript,regex js,learning regex,regex tutorials,what is regex" />
+        <meta name="description" content="A learning calculator for regular expressions, designed for students, beginners, and the curious." />
+        <title>@ViewBag.Title</title>
+        @Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")
+    </head>
+    <body>
+        @* declaring urls in main body of app for use in js files *@
+        @Html.Hidden("linkURL", Url.Action("getLinks", "Root"))
+        @Html.Hidden("contentURL", Url.Action("getContent", "Root"))
+        @Html.Hidden("keyURL", Url.Action("getKeywords", "Root"))
+        @* top nav bar, fixed *@
+        <div id="top-nav" class="navbar navbar-dark navbar-inverse navbar-fixed-top">
             <div class="navbar-header">
-                <a id="logo" class="pull-left" style="margin-left: 8px; margin-right: 4px;"><img src="~/Content/logo-thicker.png" /></a>
+                <a id="calc-logo" class="pull-left" style="margin-left: 8px; margin-right: 4px;"><img src="~/Content/logo-thicker.png" /></a>
                 <a class="navbar-brand">RegCalc</a>
             </div>
             <ul class="nav navbar-nav">
@@ -25,8 +31,7 @@
                 </li>
                 <li class="dropdown">
                     <a tabindex="" class="dropdown-toggle" role="button" data-toggle="dropdown">Help</a>
-                    <ul class="dropdown-menu" id="help-menu">
-                    </ul>
+                    <ul class="dropdown-menu" id="help-menu"></ul>
                 </li>
                 <li class="dropdown">
                     <a tabindex="" class="dropdown-toggle" data-toggle="dropdown">Regex Resources</a>
@@ -45,24 +50,19 @@
                     </ul>
                 </li>
             </ul>
-        </nav>
-    </div>
-    <div>
-        <nav class="navbar navbar-inverse navbar-left side-nav pull-left" id="side-nav">
-            <div class="navbar-header"><a class="navbar-brand" id="nav-title"></a></div>
-            <ul class="nav" id="side-list"></ul>
-        </nav>
-    </div>
-    @Html.Partial("_Overlays")
-    <div id="body" class="container body-content">
-        @RenderBody()
-
-        @Scripts.Render("~/bundles/modernizr")
+        </div>
+        @* left nav bar, collapsable *@
+        <div id="side-nav" class="navbar navbar-inverse navbar-left side-nav pull-left">
+            <div class="navbar-header"><a id="nav-title" class="navbar-brand"></a></div>
+            <ul id="side-list" class="nav"></ul>
+        </div>
+        @Html.Partial("_Overlay")
+        <div id="body" class="container body-content">
+            @RenderBody()
+        </div>
         @Scripts.Render("~/bundles/jquery")
         @Scripts.Render("~/bundles/bootstrap")
         @Scripts.Render("~/bundles/layout")
-        @Scripts.Render("~/bundles/calculator")
         @RenderSection("scripts", required: false)
-    </div>
-</body>
+    </body>
 </html>

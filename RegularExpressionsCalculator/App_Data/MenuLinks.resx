@@ -117,14 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Anchor" xml:space="preserve">
+  <data name="Anchors" xml:space="preserve">
     <value>CaretAnchor,^;StringBegin,\A;DollarAnchor,$;StringEnd,\Z;BoundaryAnchor,\b;NotWordBoundary,\B;WordStart,\&lt;;WordEnd,\&gt;</value>
   </data>
   <data name="Assert" xml:space="preserve">
     <value>Lookahead,?=;NegLookahead,?!;Lookbehind, ?&lt;=;NegLookbehind, ?!= or ?&lt;!;OnceOnly, ?&gt;;IfThen, ?();IfThenElse, ?()|;Comment, ?#</value>
   </data>
   <data name="Calculator" xml:space="preserve">
-    <value>Anchors,Assertions,Character Classes,Escape Characters,Groups and Ranges,Quantifiers,Pattern Modifiers,Special Characters,String Replacement</value>
+    <value>Anchors,Anchors;Assertions,Assertions;Character,Character Classes;Escape,Escape Characters;Group,Groups and Ranges;Quant,Quantifiers;Mod,Pattern Modifiers;Special,Special Characters;Replace,String Replacement</value>
   </data>
   <data name="Character" xml:space="preserve">
     <value>ControlChar,\c;SpaceChar,\s;NotSpace,\S;DigitChar,\d;NonDigitChar,\D;WordChar,\w;NonWordChar,\W;HexaChar,\x;OctalChar,\O</value>
@@ -136,7 +136,7 @@
     <value>PeriodRange,.;OrRange,(a|b);GroupRange,(...);PassiveRange,(?:...);OrBracket,[abc];NonOrRange,[^abc];BracketRange,[a-e];DigitRange,[0-5];SubPatternRange,\y</value>
   </data>
   <data name="HelpCalc" xml:space="preserve">
-    <value>What do I do?,What happens if I enter something wrong?,Why isn't it doing anything?,Why a regular expressions calculator?,I need more help than this.</value>
+    <value>HelpCalcDo,What do I do?;HelpCalcWrong,What happens if I enter something wrong?;HelpCalcAnything,Why isn't it doing anything?;HelpCalcWhy,Why a regular expressions calculator?;HelpCalcMore,I need more help than this.</value>
   </data>
   <data name="HelpEngine" xml:space="preserve">
     <value />

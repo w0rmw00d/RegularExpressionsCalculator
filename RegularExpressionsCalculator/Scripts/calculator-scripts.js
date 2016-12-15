@@ -6,12 +6,15 @@
  * text, displays error messages, and ajax calls.
  * NOTE: calculation done client-side where possible.
  ************************************************/
-// SECTION: FLAGS
+// SECTION: GLOBAL VARS
 // flag for type of parse applied to user expression. false = regex parse. true = plain text parse.
 var parse = false;
+// references to urls calculated in Calculator.cshtml. work around to allow html helpers in separate js files
+var interpretRegex = $("#interpretRegexURL").val();
+var interpretPlain = $("#interpretPlainURL").val();
 
 // SECTION: EVENT LISTENERS
-// event listener for user-exp. calls interpret method based on current value of flag.
+// event listener for user-input. calls interpret method based on current value of flag.
 $('#user-input').on('input', function () {
     if (!parse) interpretRegEx();
     else interpretPlainText();
@@ -23,9 +26,8 @@ $('#calculate-button').on('click', function (event) {
     parseInput();
 });
 
-// event listener for parse-toggle. calls parseToggle and prevents default form submission.
+// event listener for parse-toggle. calls parseToggle.
 $('#parse-toggle').on('click', function (event) {
-    event.preventDefault();
     parseToggle();
 });
 
@@ -107,8 +109,8 @@ function parseFlags(input) {
 function interpretRegEx() {
     var userStr = document.getElementById("user-input");
     $.ajax({
-        method: 'POST',
-        url: '@Url.Action("interpretRegEx", "Calculator")',
+        dataType: 'json',
+        url: '@Url.Action("", "Calculator")',
         data: {input: userStr.textContent},
         success: function (result) {
             var exp = document.getElementById("exp-text");
@@ -121,8 +123,8 @@ function interpretRegEx() {
 function interpretPlainText() {
     var userStr = document.getElementById("user-exp").textContent;
     $.ajax({
-        method: 'POST',
-        url: '@Url.Action("interpretPlainText", "Calculator")',
+        dataType: 'json',
+        url: '@Url.Action("", "Calculator")',
         data: { input: userStr.textContent },
         success: function (result) {
             var exp = document.getElementById("exp-text");

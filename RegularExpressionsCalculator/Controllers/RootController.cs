@@ -26,11 +26,11 @@ namespace RegularExpressionsCalculator.Controllers
         public ResourceSet getResources(string name)
         {
             ResourceSet resource;
-            if (name == "error") resource = App_Data.OverlayContent.ResourceManager.GetResourceSet(CultureInfo.CurrentUICulture, true, true);
-            else if (name == "keywords") resource = App_Data.SampleAnalysisText.ResourceManager.GetResourceSet(CultureInfo.CurrentUICulture, true, true);
-            else if (name == "overlay") resource = App_Data.SampleAnalysisText.ResourceManager.GetResourceSet(CultureInfo.CurrentUICulture, true, true);
-            else if (name == "links") resource = App_Data.SampleAnalysisText.ResourceManager.GetResourceSet(CultureInfo.CurrentUICulture, true, true);
-            else if (name == "plaintext") resource = App_Data.SampleAnalysisText.ResourceManager.GetResourceSet(CultureInfo.CurrentUICulture, true, true);
+            if (name == "error") resource = App_Data.ErrorMessages.ResourceManager.GetResourceSet(CultureInfo.CurrentUICulture, true, true);
+            else if (name == "keywords") resource = App_Data.Keywords.ResourceManager.GetResourceSet(CultureInfo.CurrentUICulture, true, true);
+            else if (name == "overlay") resource = App_Data.OverlayContent.ResourceManager.GetResourceSet(CultureInfo.CurrentUICulture, true, true);
+            else if (name == "links") resource = App_Data.MenuLinks.ResourceManager.GetResourceSet(CultureInfo.CurrentUICulture, true, true);
+            else if (name == "plaintext") resource = App_Data.RegexPlainText.ResourceManager.GetResourceSet(CultureInfo.CurrentUICulture, true, true);
             else resource = App_Data.SampleAnalysisText.ResourceManager.GetResourceSet(CultureInfo.CurrentUICulture, true, true);
 
             return resource;
@@ -43,11 +43,11 @@ namespace RegularExpressionsCalculator.Controllers
         /// </summary>
         /// <param name="key"></param>
         /// <returns></returns>
-        public JsonResult getOverlayContent(string key)
+        public JsonResult getContent(string key)
         {
-            ResourceSet set = getResources("overlay");
+            var set = getResources("overlay");
             var split = set.GetString(key).Split(';');
-            return Json(new { Title = split[0], Content = split[1] });
+            return Json(new KeyValuePair<string, string>(split[0], split[1]), JsonRequestBehavior.AllowGet);
         }
 
         /// <summary>
@@ -56,19 +56,19 @@ namespace RegularExpressionsCalculator.Controllers
         /// </summary>
         /// <param name="key"></param>
         /// <returns></returns>
-        public JsonResult getOverlayLinks(string key)
+        public JsonResult getLinks(string key)
         {
-            var list = new List<Tuple<string, string>>();
+            var list = new List<KeyValuePair<string, string>>();
             var set = getResources("links");
             var links = set.GetString(key).Split(';');
 
             foreach (var link in links)
             {
                 var split = link.Split(',');
-                list.Add(Tuple.Create(split[0], split[1]));
+                list.Add(new KeyValuePair<string, string>(split[0], split[1]));
             }
 
-            return Json(new { Links = list });
+            return Json(list, JsonRequestBehavior.AllowGet);
         }
 
         /// <summary>
@@ -77,7 +77,7 @@ namespace RegularExpressionsCalculator.Controllers
         /// </summary>
         /// <param name="key"></param>
         /// <returns></returns>
-        public JsonResult getOverlayKeywords(string input)
+        public JsonResult getKeywords(string input)
         {
             var words = string.Empty;
             var set = getResources("keywords");
@@ -88,7 +88,7 @@ namespace RegularExpressionsCalculator.Controllers
                     if (entry.Key.ToString().Equals(input)) words = entry.Value.ToString();
                 }
             }
-            return Json(new { keyWords = words });
+            return Json(words, JsonRequestBehavior.AllowGet);
         }
     }
 }

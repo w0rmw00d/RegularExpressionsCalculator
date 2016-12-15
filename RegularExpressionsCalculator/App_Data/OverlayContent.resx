@@ -288,7 +288,7 @@
   <data name="Assert" xml:space="preserve">
     <value>Assertions;These patterns are called assertions because they instruct the regex engine to forget everything but whether or not a match was found for the pattern.</value>
   </data>
-  <data name="Anchor" xml:space="preserve">
+  <data name="Anchors" xml:space="preserve">
     <value>Anchors;These patterns are used to indicate search boundaries, whether for words, lines, or their negations. </value>
   </data>
   <data name="Character" xml:space="preserve">

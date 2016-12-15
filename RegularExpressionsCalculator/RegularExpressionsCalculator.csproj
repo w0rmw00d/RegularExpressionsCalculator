@@ -216,7 +216,7 @@
     <Content Include="Views\Calculator\Calculator.cshtml" />
     <Content Include="Views\RegularEngine\RegularEngine.cshtml" />
     <Content Include="Views\RegularLang\RegularLang.cshtml" />
-    <Content Include="Views\Shared\_Overlays.cshtml" />
+    <Content Include="Views\Shared\_Overlay.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

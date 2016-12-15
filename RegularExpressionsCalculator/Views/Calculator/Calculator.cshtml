@@ -1,6 +1,9 @@
 ﻿@{
     ViewBag.Title = "Calculator";
 }
+@* declaring urls in main body of app for use in js files *@
+@Html.Hidden("interpretRegexURL", Url.Action("interpretRegEx", "Calculator"))
+@Html.Hidden("interpretPlainURL", Url.Action("interpretPlainText", "Calculator"))
 @* NOTE: Contents of sample-text are in raw html to allow formatting via Site.css *@
 <div>
     <div style="float:left;">
@@ -24,9 +27,13 @@
                 <div tabindex="" class="text-div" id="sample-text">@Html.Raw(@ViewBag.SampleText)</div>
             </dd>
         </dl>
-        <div class="pull-right" style="margin: 10px;">
+        <div class="pull-right" style="margin: 10px 0 10px 0;">
             <a id="calculate-button" style="margin: 0 20px 0 0;">Calculate</a>
-            <a id="parse-toggle" data-toggle="popover" data-trigger="focus" title="NOTE" data-content="Feature currently in alpha.">Plain Text</a>
+            <a id="parse-toggle" data-toggle="popover" data-trigger="hover" title="NOTE" data-content="Feature currently in alpha.">Plain Text</a>
         </div>
     </div>
 </div>
+
+@section scripts {
+    @Scripts.Render("~/bundles/calculator")
+}

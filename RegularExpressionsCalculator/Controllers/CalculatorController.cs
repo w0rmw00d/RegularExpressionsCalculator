@@ -96,7 +96,8 @@ namespace RegularExpressionsCalculator.Controllers
 
         /// <summary>
         /// splits input string on metacharacters '\', '?', '^', ']', '}', ')', '}?', or '$'.
-        /// NOTE: is designed to split on end brackets and after any sequence following a metacharacter.
+        /// NOTE: is designed to split on end brackets and after any sequence following a 
+        /// metacharacter which does not include the next set of metacharacters.
         /// </summary>
         /// <param name="input"></param>
         /// <returns></returns>
@@ -300,7 +301,6 @@ namespace RegularExpressionsCalculator.Controllers
                     }
                 }
             }
-
             return Json(new { Interpreted = message });
         }
 
@@ -445,7 +445,7 @@ namespace RegularExpressionsCalculator.Controllers
             {
                 for(int b = 1; b <= keywordLength; b++)
                 {
-                    int cost = (input[a-1] == keyword[b - 1]) ? 0 : 1; // if match is not found, add point to the cost (of replacement)
+                    int cost = (input[a-1] == keyword[b-1]) ? 0 : 1; // if match is not found, add point to the cost (of replacement)
                     // the value at each node in the matrix is the minimum of the minimum of either the previous value + 1 or the previous value + the replacement cost
                     // NOTE: matching is calculated on the previous due to offset of one and to prevent access over the matrix size
                     similarityMatrix[a, b] = Math.Min(Math.Min(similarityMatrix[a-1, b] + 1, similarityMatrix[a, b-1] + 1), similarityMatrix[a - 1, b - 1] + cost);

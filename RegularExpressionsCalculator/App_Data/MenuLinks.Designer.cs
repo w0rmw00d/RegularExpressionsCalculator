@@ -63,9 +63,9 @@ namespace RegularExpressionsCalculator.App_Data {
         /// <summary>
         ///   Looks up a localized string similar to CaretAnchor,^;StringBegin,\A;DollarAnchor,$;StringEnd,\Z;BoundaryAnchor,\b;NotWordBoundary,\B;WordStart,\&lt;;WordEnd,\&gt;.
         /// </summary>
-        internal static string Anchor {
+        internal static string Anchors {
             get {
-                return ResourceManager.GetString("Anchor", resourceCulture);
+                return ResourceManager.GetString("Anchors", resourceCulture);
             }
         }
         
@@ -79,7 +79,7 @@ namespace RegularExpressionsCalculator.App_Data {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Anchors,Assertions,Character Classes,Escape Characters,Groups and Ranges,Quantifiers,Pattern Modifiers,Special Characters,String Replacement.
+        ///   Looks up a localized string similar to Anchors,Anchors;Assertions,Assertions;Character,Character Classes;Escape,Escape Characters;Group,Groups and Ranges;Quant,Quantifiers;Mod,Pattern Modifiers;Special,Special Characters;Replace,String Replacement.
         /// </summary>
         internal static string Calculator {
             get {
@@ -115,7 +115,7 @@ namespace RegularExpressionsCalculator.App_Data {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to What do I do?,What happens if I enter something wrong?,Why isn&apos;t it doing anything?,Why a regular expressions calculator?,I need more help than this..
+        ///   Looks up a localized string similar to HelpCalcDo,What do I do?;HelpCalcWrong,What happens if I enter something wrong?;HelpCalcAnything,Why isn&apos;t it doing anything?;HelpCalcWhy,Why a regular expressions calculator?;HelpCalcMore,I need more help than this..
         /// </summary>
         internal static string HelpCalc {
             get {

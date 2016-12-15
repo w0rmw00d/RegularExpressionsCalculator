@@ -46,6 +46,7 @@ textarea {
 .text-div {
     max-width: 350px;
     max-height: 500px;
+    padding:10px;
     overflow-wrap:break-word;
     overflow:auto;
     background-color: white;
@@ -68,11 +69,13 @@ textarea {
 
 /* for the overlay used by all three pages */
 .overlay {
+    text-align: center;
+    align-content: center;
     height: 100%;
-    width: 0;
+    width: 30%;
     position: fixed;
-    z-index: 1;
     margin: 3% 0 0 20%;
+    padding: 5%;
     background-color: rgba(0,0,0,0.9); /* background, with opacity */
     overflow-x: hidden;
     transition: 0.5s; /* animation delay on overlay slide */
@@ -80,40 +83,49 @@ textarea {
 
 /* alignment and styling for overlay content */
 .overlay-content {
-    margin: 2% 0 0 0;
-    padding: 10% 14% 0 5%;
+    margin: 0;
+    padding: 5%;
     color: lightgray;
-    position: relative;
     text-align: center;
 }
 
 .overlay-title {
-    font: 18pt arial, verdana;
-}
-
-/* links for the first level of overlay */
-.overlay a {
-    margin: 1%;
-    text-decoration: none;
-    font: bolder 16pt arial, verdana;
+    padding: 5%;
     color: #058bd8;
-    display: block;
+    font: bold 40px arial, verdana;
 }
 
-/* overlay hover */
+.overlay-links {
+    padding: 5%;
+    color: #058bd8;
+}
+
+.overlay-keywords {
+    text-align: center;
+    padding: 5%;
+}
+
+.overlay a {
+    font: bold 25px arial, verdana;
+}
+
+.overlay li {
+    text-decoration: none;
+    list-style-type: none;
+    text-align: center;
+}
+
 .overlay a:hover, .overlay a:focus {
     color:lightgray;
     text-decoration: none;
 }
 
-/* overlay close button */
 .overlay .close-btn {
     position: absolute;
-    top:0;
+    top: 0;
     right: 2%;
     margin: 2% 1% 5% 0;
-    font-size: 35pt;
-    z-index: 2;
+    font: bold 50pt arial, verdana;
 }
 
 .body-panel {
@@ -167,6 +179,7 @@ a:focus {
 
 ::-webkit-scrollbar {
     background-color:#202020;
+    max-height: 200px;
 }
 
 ::-webkit-scrollbar-track {
@@ -189,48 +202,33 @@ label {
     font: 14px;
 }
 
-/* used for internal boxes housing content */
-.content-box {
-    width: 25%;
-    height: 100%;
+.popover {
+    margin: 0 0 10px 0;
+    padding: 0px;
     background-color: white;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-}
-/* used for internal boxes housing content, title div */
-.content-title {
-    background-color: dimgrey;
-    text-align:center;
-    color: black;
-    font:bold 16pt arial,verdana;
-    margin: 0 0 2px 0;
-    padding: 5px;
-    -webkit-border-top-right-radius: 5px;
-    -webkit-border-top-left-radius: 5px;
-    -moz-border-radius-topright: 5px;
-    -moz-border-radius-topleft: 5px;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px 10px;
 }
 
-/* used for internal boxes housing content, text div */
-.content-textbox {
+.popover-title {
+    background-color: dimgrey;
+    text-align: center;
+    color: black;
+    font: bold;
+    margin: 0 0 1px 0;
+    padding: 5px;
+}
+
+.popover-content {
     background-color: grey;
     color: black;
     padding: 5px 10px 5px 10px;
     text-emphasis: none;
-    -webkit-border-bottom-right-radius: 5px;
-    -webkit-border-bottom-left-radius: 5px;
-    -moz-border-radius-bottomright: 5px;
-    -moz-border-radius-bottomleft: 5px;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
 }
 
-/* used for highlighted text */
 .text-highlight {
-    background-color: grey;
+    color: #058bd8;
 }
 
 /* media adjustment for overlay */

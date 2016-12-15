@@ -81,9 +81,9 @@ namespace RegularExpressionsCalculator.App_Data {
         /// <summary>
         ///   Looks up a localized string similar to Anchors;These patterns are used to indicate search boundaries, whether for words, lines, or their negations. .
         /// </summary>
-        public static string Anchor {
+        public static string Anchors {
             get {
-                return ResourceManager.GetString("Anchor", resourceCulture);
+                return ResourceManager.GetString("Anchors", resourceCulture);
             }
         }
         

@@ -9,7 +9,7 @@
 // SECTION: GLOBAL VARS
 // flag for type of parse applied to user expression. false = regex parse. true = plain text parse.
 var parse = false;
-// references to urls calculated in Calculator.cshtml. work around to allow html helpers in separate js files
+// references to urls calculated in Calculator.cshtml. work around to allow the use of html helpers in separate js files
 var interpretRegex = $("#interpretRegexURL").val();
 var interpretPlain = $("#interpretPlainURL").val();
 
@@ -22,7 +22,6 @@ $('#user-input').on('input', function () {
 
 // event listener for calc-button. calls parseInput and prevents default form submission.
 $('#calculate-button').on('click', function (event) {
-    event.preventDefault();
     parseInput();
 });
 
@@ -66,6 +65,7 @@ function parseInput() {
     // assigning engine to instantiation of regex engine based on presence of flags in parsed
     if (parsed.flags.length > 0) engine = new RegExp(parsed.exp, parsed.flags);
     else engine = new RegExp(parsed.exp);
+    alert("input: " + input + " parsed.exp: " + parsed.exp + " parsed.flags: " + parsed.flags);
     // attempt to execute engine on sample analysis text
     try {
         // if global flag exists, run engine until all matches are found
@@ -86,7 +86,7 @@ function parseInput() {
 
 // displays error message if user-entered expression is unable to be parsed. called by parseRegEx and parseText.
 function displayError(error) {
-    alert("Write me a better error method, ya lazy code monkey. " + error);
+    alert("Write me a better error method, ya lazy code monkey. error: " + error);
 }
 
 // parses out flags from input and returns array containing expression and flags.
@@ -107,11 +107,12 @@ function parseFlags(input) {
 // interprets regex as plain text via ajax call to CalculatorController. called by
 // event listener on user-input. fills translated-input based on value of user-input.
 function interpretRegEx() {
-    var userStr = document.getElementById("user-input");
+    var userStr = document.getElementById("user-input").textContent;
+    alert("called interpretRegEx. userStr: " + userStr);
     $.ajax({
         dataType: 'json',
-        url: '@Url.Action("", "Calculator")',
-        data: {input: userStr.textContent},
+        url: interpretRegex,
+        data: {input: userStr},
         success: function (result) {
             var exp = document.getElementById("exp-text");
             exp.textContent = result.interpreted;
@@ -124,8 +125,8 @@ function interpretPlainText() {
     var userStr = document.getElementById("user-exp").textContent;
     $.ajax({
         dataType: 'json',
-        url: '@Url.Action("", "Calculator")',
-        data: { input: userStr.textContent },
+        url: interpretPlain,
+        data: { input: userStr },
         success: function (result) {
             var exp = document.getElementById("exp-text");
             exp.textContent = result.interpreted;

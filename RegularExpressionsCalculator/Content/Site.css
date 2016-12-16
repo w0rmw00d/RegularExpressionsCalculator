@@ -109,6 +109,10 @@ textarea {
     font: bold 25px arial, verdana;
 }
 
+.top-nav {
+    font: normal 15px arial, verdana;
+}
+
 .overlay li {
     text-decoration: none;
     list-style-type: none;

@@ -79,7 +79,7 @@ namespace RegularExpressionsCalculator.App_Data {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Anchors,Anchors;Assertions,Assertions;Character,Character Classes;Escape,Escape Characters;Group,Groups and Ranges;Quant,Quantifiers;Mod,Pattern Modifiers;Special,Special Characters;Replace,String Replacement.
+        ///   Looks up a localized string similar to Anchors,Anchors;Assert,Assertions;Character,Character Classes;Escape,Escape Characters;Group,Groups and Ranges;Quant,Quantifiers;Mod,Pattern Modifiers;Special,Special Characters;Replace,String Replacement.
         /// </summary>
         internal static string Calculator {
             get {

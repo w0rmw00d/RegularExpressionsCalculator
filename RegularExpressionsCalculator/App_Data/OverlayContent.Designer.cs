@@ -142,51 +142,6 @@ namespace RegularExpressionsCalculator.App_Data {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to What do I do?;Enter any regular expression you wish to test in the input box and press the run button to see what patterns it matches in the text box..
-        /// </summary>
-        public static string CalcDo {
-            get {
-                return ResourceManager.GetString("CalcDo", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to I need more help than this.;Toggle the option &apos;Plain Text&apos; on the page beneath the forms. NOTE: This feature is in alpha and may not work..
-        /// </summary>
-        public static string CalcReallyHelp {
-            get {
-                return ResourceManager.GetString("CalcReallyHelp", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Why isn&apos;t it doing anything?;If there&apos;s an error in your pattern, a popup should appear that tells you what&apos;s wrong. If this does not occur, please contact me..
-        /// </summary>
-        public static string CalcUserErr {
-            get {
-                return ResourceManager.GetString("CalcUserErr", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Why a regular expressions calculator?;Regular expressions are a necessary part of understanding how to parse text efficiently, but they can be very difficult to understand. This calculator can help you learn them..
-        /// </summary>
-        public static string CalcWhy {
-            get {
-                return ResourceManager.GetString("CalcWhy", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to What happens if I enter something wrong?;If you enter a pattern that won&apos;t resolve, a popup will tell you what&apos;s wrong..
-        /// </summary>
-        public static string CalcWrong {
-            get {
-                return ResourceManager.GetString("CalcWrong", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to ^;Start of String/Line: The caret signals the start of string or multiline pattern..
         /// </summary>
         public static string CaretAnchor {
@@ -345,6 +300,51 @@ namespace RegularExpressionsCalculator.App_Data {
         public static string GroupRange {
             get {
                 return ResourceManager.GetString("GroupRange", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Why isn&apos;t it doing anything?;If there&apos;s an error in your pattern, a popup should appear that tells you what&apos;s wrong. If this does not occur, please contact me..
+        /// </summary>
+        public static string HelpCalcAnything {
+            get {
+                return ResourceManager.GetString("HelpCalcAnything", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to What do I do?;Enter any regular expression you wish to test in the input box and press the run button to see what patterns it matches in the text box..
+        /// </summary>
+        public static string HelpCalcDo {
+            get {
+                return ResourceManager.GetString("HelpCalcDo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I need more help than this.;Toggle the option &apos;Plain Text&apos; on the page beneath the forms. NOTE: This feature is in alpha and may not work..
+        /// </summary>
+        public static string HelpCalcMore {
+            get {
+                return ResourceManager.GetString("HelpCalcMore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Why a regular expressions calculator?;Regular expressions are a necessary part of understanding how to parse text efficiently, but they can be very difficult to understand. This calculator can help you learn them..
+        /// </summary>
+        public static string HelpCalcWhy {
+            get {
+                return ResourceManager.GetString("HelpCalcWhy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to What happens if I enter something wrong?;If you enter a pattern that won&apos;t resolve, a popup will tell you what&apos;s wrong..
+        /// </summary>
+        public static string HelpCalcWrong {
+            get {
+                return ResourceManager.GetString("HelpCalcWrong", resourceCulture);
             }
         }
         

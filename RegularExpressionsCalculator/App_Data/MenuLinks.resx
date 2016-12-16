@@ -124,7 +124,7 @@
     <value>Lookahead,?=;NegLookahead,?!;Lookbehind, ?&lt;=;NegLookbehind, ?!= or ?&lt;!;OnceOnly, ?&gt;;IfThen, ?();IfThenElse, ?()|;Comment, ?#</value>
   </data>
   <data name="Calculator" xml:space="preserve">
-    <value>Anchors,Anchors;Assertions,Assertions;Character,Character Classes;Escape,Escape Characters;Group,Groups and Ranges;Quant,Quantifiers;Mod,Pattern Modifiers;Special,Special Characters;Replace,String Replacement</value>
+    <value>Anchors,Anchors;Assert,Assertions;Character,Character Classes;Escape,Escape Characters;Group,Groups and Ranges;Quant,Quantifiers;Mod,Pattern Modifiers;Special,Special Characters;Replace,String Replacement</value>
   </data>
   <data name="Character" xml:space="preserve">
     <value>ControlChar,\c;SpaceChar,\s;NotSpace,\S;DigitChar,\d;NonDigitChar,\D;WordChar,\w;NonWordChar,\W;HexaChar,\x;OctalChar,\O</value>

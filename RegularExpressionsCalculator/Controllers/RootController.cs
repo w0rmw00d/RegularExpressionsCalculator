@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Web.Mvc;
 using System.Resources;
-using System.Collections;
 using System.Globalization;
 using System.Collections.Generic;
 
@@ -77,18 +76,10 @@ namespace RegularExpressionsCalculator.Controllers
         /// </summary>
         /// <param name="key"></param>
         /// <returns></returns>
-        public JsonResult getKeywords(string input)
+        public JsonResult getKeywords(string key)
         {
-            var words = string.Empty;
             var set = getResources("keywords");
-            while (string.IsNullOrEmpty(words))
-            {
-                foreach (DictionaryEntry entry in set)
-                {
-                    if (entry.Key.ToString().Equals(input)) words = entry.Value.ToString();
-                }
-            }
-            return Json(words, JsonRequestBehavior.AllowGet);
+            return Json(set.GetString(key), JsonRequestBehavior.AllowGet);
         }
     }
 }

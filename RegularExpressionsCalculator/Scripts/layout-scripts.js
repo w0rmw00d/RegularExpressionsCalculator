@@ -3,10 +3,11 @@
  * includes navigation, email, script utilities, opening/closing overlay, get/set 
  * overlay content, clean overlay, and toggled visibility for side nav.
  * NOTE: The overlay is used by three different kinds of events: primary (contains links), 
- * secondary (no links, contains keywords), and help (contains neither links nor keywords.) 
+ * secondary (no links, contains keywords), and help (contains neither links nor keywords.)
+ * Primary links are those hosted in the navs. Secondary links are hosted in the overlay.
  ************************************************************************************/
 // SECTION: GLOBAL VARS
-// references to urls calculated in _Layout. work around to allow html helpers in separate js files.
+// references to urls calculated in _Layout. work around to allow the use of html helpers in separate js files.
 var linkUrl = $("#linkURL").val();
 var contentUrl = $("#contentURL").val();
 var keyUrl = $("#keyURL").val();
@@ -24,6 +25,7 @@ $().ready(function () {
 
     // event listener for overlay close button. toggles overlay visibility via toggleOverlay.
     $("#overlay-close").on("click", function (event) {
+        cleanOverlay();
         toggleOverlay();
     });
 
@@ -135,6 +137,7 @@ function getLinks(name, element) {
                 for (var entry in result) {
                     var item = document.createElement("li");
                     var link = document.createElement("a");
+                    if (elem.id == "help-menu") link.className = "top-nav";
                     link.text = result[entry].Value;
                     link.id = result[entry].Key;
                     item.appendChild(link);
@@ -143,7 +146,7 @@ function getLinks(name, element) {
                 elem.addEventListener("click", function (event) {
                     if (element == "overlay-links") fillOverlay(event.target.id, "secondary");
                     else {
-                        toggleOverlay();
+                        if(overlay.hidden) toggleOverlay();
                         fillOverlay(event.target.id, "primary");
                     }
                 });
@@ -186,8 +189,11 @@ function getKeywords(name, element) {
         data: { key: name },
         success: function (result) {
             var elem = document.getElementById(element);
-            if (links.childNodes.length == 0) {
-                var content = document.createTextNode("KEYWORDS: " + result);
+            if (elem.childNodes.length == 0) {
+                var title = document.createElement("a");
+                var content = document.createTextNode(result);
+                title.textContent = "KEYWORDS: ";
+                elem.appendChild(title);
                 elem.appendChild(content);
             }
         }
@@ -209,10 +215,17 @@ function cleanOverlay() {
 }
 
 // trivial caller for methods in layout-scripts used to fill overlay elements. depending on whether 
-// type is primary, help, or secondary, different overlay elements will be filled. called by openOverlay.
+// type is primary or secondary, different overlay elements will be filled. called by openOverlay.
 function fillOverlay(name, type) {
+    alert("name: " + name + " type: " + type);
     cleanOverlay();
     getContent(name, "overlay");
     if (type == "primary") getLinks(name, "overlay-links");
     else if (type == "secondary") getKeywords(name, "overlay-keywords");
+}
+
+
+// performs ajax call to server to get error messages in the event of error
+function getErrorMessages(error) {
+
 }

@@ -30,6 +30,7 @@ namespace RegularExpressionsCalculator.Controllers
             else if (name == "overlay") resource = App_Data.OverlayContent.ResourceManager.GetResourceSet(CultureInfo.CurrentUICulture, true, true);
             else if (name == "links") resource = App_Data.MenuLinks.ResourceManager.GetResourceSet(CultureInfo.CurrentUICulture, true, true);
             else if (name == "plaintext") resource = App_Data.RegexPlainText.ResourceManager.GetResourceSet(CultureInfo.CurrentUICulture, true, true);
+            else if (name == "symbols") resource = App_Data.Symbols.ResourceManager.GetResourceSet(CultureInfo.CurrentUICulture, true, true);
             else resource = App_Data.SampleAnalysisText.ResourceManager.GetResourceSet(CultureInfo.CurrentUICulture, true, true);
 
             return resource;

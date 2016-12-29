@@ -122,6 +122,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="App_Data\Symbols.Designer.cs">
+      <DependentUpon>Symbols.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="App_Data\RegexPlainText.Designer.cs">
       <DependentUpon>RegexPlainText.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -226,6 +231,10 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ErrorMessages.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="App_Data\Symbols.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Symbols.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="App_Data\RegexPlainText.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RegexPlainText.Designer.cs</LastGenOutput>
@@ -244,7 +253,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="App_Data\OverlayContent.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>OverlayContent.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

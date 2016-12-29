@@ -108,13 +108,13 @@ function parseFlags(input) {
 // interprets regex as plain text via ajax call to CalculatorController. called by
 // event listener on user-input. fills translated-input based on value of user-input.
 function interpretRegex(userStr) {
-    alert("called interpretRegEx. userStr: " + userStr);
     $.ajax({
         dataType: 'json',
         url: regex,
         data: {input: userStr},
         success: function (result) {
-            var exp = document.getElementById("exp-text");
+            alert("result: " + result);
+            var exp = document.getElementById("translated-input");
             exp.textContent = result;
         }
     });
@@ -125,10 +125,10 @@ function interpretPlain(userStr) {
     $.ajax({
         dataType: 'json',
         url: plain,
-        data: { input: userStr },
+        data: {input: userStr},
         success: function (result) {
-            var exp = document.getElementById("exp-text");
-            exp.textContent = result.interpreted;
+            var exp = document.getElementById("translated-input");
+            exp.textContent = result;
         }
     });
 }

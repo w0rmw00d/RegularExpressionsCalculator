@@ -85,27 +85,28 @@ namespace RegularExpressionsCalculator.Controllers
         public List<Tuple<string, string>> getSymbols()
         {
             var list = new List<Tuple<string, string>>();
-            var set = getResources("overlay");
+            var set = getResources("symbols");
             foreach (DictionaryEntry entry in set)
             {
                 var value = entry.Value.ToString().Split(';');
-                list.Add(Tuple.Create(value[0], entry.Key.ToString()));
+                foreach(var val in value) list.Add(Tuple.Create(val, entry.Key.ToString()));
             }
             return list;
         }
 
         /// <summary>
-        /// splits input string on metacharacters '\', '?', '^', ']', '}', ')', '}?', or '$'.
-        /// NOTE: is designed to split on end brackets and after any sequence following a 
-        /// metacharacter which does not include the next set of metacharacters.
+        /// splits input string on metacharacters and/or brackets.
         /// </summary>
         /// <param name="input"></param>
         /// <returns></returns>
         public string[] splitRegEx(string input)
         {
+            string[] split = {};
             // capture patterns for each of the metacharacters, followed by one or more non-metacharacters
-            var patterns = @"?[^\\$]+" + @"\\[^\\]+" + @"$[^$]+" + @"\$" + @"]" + @"}?" + @"}" + @"]";
-            return Regex.Split(input, patterns);
+            string pattern = @"(\\[^\\]+) | (\$[\w\d]+) | (\^) | (\[[\d\w]\]\D*) | (\?[^\\]*) | ({[\w\d]+}) | (\\) | (\$)";
+            split = Regex.Split(input, pattern);
+
+            return split;
         }
 
         /// <summary>
@@ -154,7 +155,8 @@ namespace RegularExpressionsCalculator.Controllers
         public string filterExactMatches(string input)
         {
             List<Tuple<string, string>> list = getSymbols();
-            return list.FirstOrDefault(a => a.Item2.Contains(input)).Item2;
+            var item = list.FirstOrDefault(a => a.Item1.Equals(input, StringComparison.CurrentCultureIgnoreCase));
+            return item.Item2;
         }
 
         /// <summary>
@@ -195,12 +197,9 @@ namespace RegularExpressionsCalculator.Controllers
         public string getRegexKey(string input)
         {
             var key = string.Empty;
-            while(string.IsNullOrEmpty(key))
-            {
-                key = filterExactMatches(input);
-                key = filterGroupsAndRanges(input);
-                key = filterSpecialCases(input);
-            }
+            key = filterExactMatches(input);
+            if(string.IsNullOrEmpty(key)) key = filterGroupsAndRanges(input);
+            if(string.IsNullOrEmpty(key)) key = filterSpecialCases(input);
             return key;
         }
 
@@ -285,6 +284,7 @@ namespace RegularExpressionsCalculator.Controllers
         public JsonResult interpretRegEx(string input)
         {
             var message = string.Empty;
+
             var split = splitRegEx(input);
             
             foreach(var item in split)
@@ -294,14 +294,14 @@ namespace RegularExpressionsCalculator.Controllers
                 {
                     var value = getResources("plaintext").GetString(key); // look up generic interpretation (value of key)
                     var pattern = getRawPatternRegex(item); // get pattern stripped of metachar, if any
-                    if (pattern.Count < 1) message = string.Concat(message, value, " "); // no pattern remains after being stripped of metachar and direct pattern match
+                    if (pattern == null) message = string.Concat(message, value, " "); // no pattern remains after being stripped of metachar and direct pattern match
                     else // input pattern exists which is not a direct match
                     {
                         message = string.Concat(message, replaceGenerics(value, pattern), " "); // remove placeholders from value and concat to message
                     }
                 }
             }
-            return Json(message);
+            return Json(message, JsonRequestBehavior.AllowGet);
         }
 
         /// <summary>
@@ -329,7 +329,7 @@ namespace RegularExpressionsCalculator.Controllers
                 }
             }
 
-            return Json(expression);
+            return Json(expression, JsonRequestBehavior.AllowGet);
         }
 
         /// <summary>

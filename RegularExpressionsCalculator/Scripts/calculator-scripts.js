@@ -10,14 +10,15 @@
 // flag for type of parse applied to user expression. false = regex parse. true = plain text parse.
 var parse = false;
 // references to urls calculated in Calculator.cshtml. work around to allow the use of html helpers in separate js files
-var interpretRegex = $("#interpretRegexURL").val();
-var interpretPlain = $("#interpretPlainURL").val();
+var regex = $("#interpretRegexURL").val();
+var plain = $("#interpretPlainURL").val();
 
 // SECTION: EVENT LISTENERS
 // event listener for user-input. calls interpret method based on current value of flag.
-$('#user-input').on('input', function () {
-    if (!parse) interpretRegEx();
-    else interpretPlainText();
+$('#user-input').on('input', function (event) {
+    var input = $(this).val();
+    if (!parse) interpretRegex(input);
+    else interpretPlain(input);
 });
 
 // event listener for calc-button. calls parseInput and prevents default form submission.
@@ -75,7 +76,7 @@ function parseInput() {
             }
         }
         else {
-            var match = engine.exec(sampleTxt);
+            matches = engine.exec(sampleTxt);
             sampleTxt = sample.replace(matches[0], "<span class='highlight'>" + matches[0] + "</span>");
         }
     }
@@ -106,26 +107,24 @@ function parseFlags(input) {
 
 // interprets regex as plain text via ajax call to CalculatorController. called by
 // event listener on user-input. fills translated-input based on value of user-input.
-function interpretRegEx() {
-    var userStr = document.getElementById("user-input").textContent;
+function interpretRegex(userStr) {
     alert("called interpretRegEx. userStr: " + userStr);
     $.ajax({
         dataType: 'json',
-        url: interpretRegex,
+        url: regex,
         data: {input: userStr},
         success: function (result) {
             var exp = document.getElementById("exp-text");
-            exp.textContent = result.interpreted;
+            exp.textContent = result;
         }
     });
 }
 
 // interprets plain text as regex via ajax call. called by action listener on user-exp. fills exp-text based on value of user-exp.
-function interpretPlainText() {
-    var userStr = document.getElementById("user-exp").textContent;
+function interpretPlain(userStr) {
     $.ajax({
         dataType: 'json',
-        url: interpretPlain,
+        url: plain,
         data: { input: userStr },
         success: function (result) {
             var exp = document.getElementById("exp-text");

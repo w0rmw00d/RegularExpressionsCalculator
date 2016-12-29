@@ -301,7 +301,7 @@ namespace RegularExpressionsCalculator.Controllers
                     }
                 }
             }
-            return Json(new { Interpreted = message });
+            return Json(message);
         }
 
         /// <summary>
@@ -329,7 +329,7 @@ namespace RegularExpressionsCalculator.Controllers
                 }
             }
 
-            return Json(new { Interpreted = expression });
+            return Json(expression);
         }
 
         /// <summary>
@@ -345,10 +345,7 @@ namespace RegularExpressionsCalculator.Controllers
             {
                 foreach (var word in input.Split(' '))
                 {
-                    if (getLevenshteinDistanceRatio(word, key) < .6)
-                    {
-                        list.Add(word);
-                    }
+                    if (getLevenshteinDistanceRatio(word, key) < .6) list.Add(word);
                 }
             }
             return list;
@@ -368,8 +365,9 @@ namespace RegularExpressionsCalculator.Controllers
             foreach (var key in keywords)
             {
                 var ratio = getLevenshteinDistanceRatio(input, key.Item2);
-                if (ratio > ratioMax) // if the current ratio is better than the max
+                if (ratio > ratioMax)
                 {
+                    ratioMax = ratio;
                     keyMax = key.Item1.ToString();
                 }
             }
@@ -391,9 +389,10 @@ namespace RegularExpressionsCalculator.Controllers
             {
                 foreach (var key in keywords)
                 {
-                    if (getLevenshteinDistanceRatio(word, key.Item2) > .6) // if the current input word matches a keyword at better than 60%
+                    // if the current input word matches a keyword at better than 60%
+                    if (getLevenshteinDistanceRatio(word, key.Item2) > .6) 
                     {
-                        indexes.Add(Regex.Match(input, word).Index); // add the start index to the list
+                        indexes.Add(Regex.Match(input, word).Index);
                     }
                 }
             }
@@ -434,7 +433,9 @@ namespace RegularExpressionsCalculator.Controllers
             int inputLength = input.Length;
             int keywordLength = keyword.Length;
             int[,] similarityMatrix = new int[inputLength + 1, keywordLength + 1];
-
+            // casting and trimming input and keyword
+            var castInput = disemvoweler(input.ToLower().Trim());
+            var castKey = disemvoweler(keyword.ToLower().Trim());
             // if either string is empty, return zero for no match
             if (inputLength == 0 || keywordLength == 0) return 0;
             // populating matrix according to string lengths
@@ -445,7 +446,7 @@ namespace RegularExpressionsCalculator.Controllers
             {
                 for(int b = 1; b <= keywordLength; b++)
                 {
-                    int cost = (input[a-1] == keyword[b-1]) ? 0 : 1; // if match is not found, add point to the cost (of replacement)
+                    int cost = (castInput[a-1] == castKey[b-1]) ? 0 : 1; // if match is not found, add point to the cost (of replacement)
                     // the value at each node in the matrix is the minimum of the minimum of either the previous value + 1 or the previous value + the replacement cost
                     // NOTE: matching is calculated on the previous due to offset of one and to prevent access over the matrix size
                     similarityMatrix[a, b] = Math.Min(Math.Min(similarityMatrix[a-1, b] + 1, similarityMatrix[a, b-1] + 1), similarityMatrix[a - 1, b - 1] + cost);
@@ -453,6 +454,28 @@ namespace RegularExpressionsCalculator.Controllers
             }
             // returns ratio of similarity as relation from total replacement cost to input string length
             return (similarityMatrix[inputLength, keywordLength] / inputLength);
+        }
+
+        /// <summary>
+        /// removes all vowels from words longer than four characters except leading vowel. called by getLevenshteinDistance.
+        /// </summary>
+        /// <param name="word"></param>
+        /// <returns></returns>
+        public static string disemvoweler(string word)
+        {
+            var length = word.Length;
+            // if it's short enough, the comparator can be run without disemvoweling
+            if (length <= 4) return word;
+            var disemvoweled = string.Empty;
+            var vowels = "aeiou";
+            for (int a = 0; a < length; a++)
+            {
+                // if a vowel and first letter in word, copy over
+                if (a == 0 && vowels.Contains(word[a])) disemvoweled = string.Concat(disemvoweled, word[a]);  
+                // else if a consonant, copy over
+                else if (!vowels.Contains(word[a])) disemvoweled = string.Concat(disemvoweled, word[a]);
+            }
+            return disemvoweled;
         }
         #endregion
     }

@@ -313,10 +313,10 @@
     <value>Special Characters;These patterns are reserved characters, used to indicate non-digit or letter characters which can be included in strings.</value>
   </data>
   <data name="HelpCalcDo" xml:space="preserve">
-    <value>What do I do?;Enter any regular expression you wish to test in the input box and press the run button to see what patterns it matches in the text box.</value>
+    <value>What do I do?;Enter any regular expression you wish to test into the input field and press calculate to see what patterns it matches in the sample text.</value>
   </data>
   <data name="HelpCalcMore" xml:space="preserve">
-    <value>I need more help than this.;Toggle the option 'Plain Text' on the page beneath the forms. NOTE: This feature is in alpha and may not work.</value>
+    <value>I need more help than this.;Toggle the option 'Plain Text' on the page beneath the forms.</value>
   </data>
   <data name="HelpCalcAnything" xml:space="preserve">
     <value>Why isn't it doing anything?;If there's an error in your pattern, a popup should appear that tells you what's wrong. If this does not occur, please contact me.</value>

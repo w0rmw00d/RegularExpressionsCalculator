@@ -22,6 +22,7 @@ $().ready(function () {
 
     fillSideNav($("title").text());
     fillHelpMenu("HelpCalc");
+    assignTabIndex();
 
     // event listener for overlay close button. toggles overlay visibility via toggleOverlay.
     $("#overlay-close").on("click", function (event) {
@@ -224,8 +225,10 @@ function fillOverlay(name, type) {
     else if (type == "secondary") getKeywords(name, "overlay-keywords");
 }
 
-
-// performs ajax call to server to get error messages in the event of error
-function getErrorMessages(error) {
-
+// assigns tab indexes to elements on page
+function assignTabIndex() {
+    var elements = document.childNodes;
+    for (var a = 1; a < elements.length; a++) {
+        elements[a].tabIndex = a;
+    }
 }

@@ -5,32 +5,31 @@
 @Html.Hidden("interpretRegexURL", Url.Action("interpretRegEx", "Calculator"))
 @Html.Hidden("interpretPlainURL", Url.Action("interpretPlainText", "Calculator"))
 @* NOTE: Contents of sample-text are in raw html to allow formatting via Site.css *@
-<div>
-    <div style="float:left;">
-        <dl class="dl-horizontal">
-            <dt>
-                <label for="user-input" id="input-label">Enter your expression:</label>
-            </dt>
-            <dd>
-                <input tabindex="" class="form-control" id="user-input" accept="\"/>
-            </dd>
-            <dt>
-                <label for="translated-input" id="translated-label">What it means:</label>
-            </dt>
-            <dd>
-                <textarea tabindex="" id="translated-input" rows="4" cols="80" readonly="readonly"></textarea>
-            </dd>
-            <dt>
-                <label for="sample-text">Text to be analyzed:</label>
-            </dt>
-            <dd>
-                <div tabindex="" class="text-div" id="sample-text">@Html.Raw(@ViewBag.SampleText)</div>
-            </dd>
-        </dl>
-        <div class="pull-right" style="margin: 10px 0 10px 0;">
-            <a id="calculate-button" style="margin: 0 20px 0 0;">Calculate</a>
-            <a id="parse-toggle" data-toggle="popover" data-trigger="hover" title="NOTE" data-content="Feature currently in alpha.">Plain Text</a>
-        </div>
+
+<div style="float:left;">
+    <dl class="dl-horizontal">
+        <dt>
+            <label for="user-input" id="input-label">Enter your expression:</label>
+        </dt>
+        <dd>
+            <input class="form-control" id="user-input" type="text"/>
+        </dd>
+        <dt>
+            <label for="translated-input" id="translated-label">What it means:</label>
+        </dt>
+        <dd>
+            <textarea id="translated-input" rows="4" cols="80" readonly="readonly"></textarea>
+        </dd>
+        <dt>
+            <label for="sample-text">Text to be analyzed:</label>
+        </dt>
+        <dd>
+            <div class="text-div" id="sample-text">@Html.Raw(@ViewBag.SampleText)</div>
+        </dd>
+    </dl>
+    <div class="pull-right" style="margin: 10px 5px 10px 0;">
+        <a id="calculate-button" style="margin: 0 20px 0 0;">Calculate</a>
+        <a id="parse-toggle" data-toggle="popover" data-trigger="hover" title="NOTE" data-content="Feature currently in alpha.">Plain Text</a>
     </div>
 </div>
 

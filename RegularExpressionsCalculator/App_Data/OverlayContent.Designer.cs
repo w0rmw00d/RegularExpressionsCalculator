@@ -313,7 +313,7 @@ namespace RegularExpressionsCalculator.App_Data {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to What do I do?;Enter any regular expression you wish to test in the input box and press the run button to see what patterns it matches in the text box..
+        ///   Looks up a localized string similar to What do I do?;Enter any regular expression you wish to test into the input field and press calculate to see what patterns it matches in the sample text..
         /// </summary>
         public static string HelpCalcDo {
             get {
@@ -322,7 +322,7 @@ namespace RegularExpressionsCalculator.App_Data {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to I need more help than this.;Toggle the option &apos;Plain Text&apos; on the page beneath the forms. NOTE: This feature is in alpha and may not work..
+        ///   Looks up a localized string similar to I need more help than this.;Toggle the option &apos;Plain Text&apos; on the page beneath the forms..
         /// </summary>
         public static string HelpCalcMore {
             get {
